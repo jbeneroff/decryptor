@@ -41,7 +41,7 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 ### Challenges
 
 - Backend Model Relationships
-- Backened Controllers
+- Backend Controllers
 
 <br>
 
