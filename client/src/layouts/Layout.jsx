@@ -1,27 +1,16 @@
-import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 export default function Layout(props) {
 
   const { currentUser, handleLogout } = props
 
   return (
-    <header>
-      <h1>DeCryptor</h1>
-      {currentUser ? (
-        <div>
-          <p>{currentUser.username}</p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <Link to='/login'>Login/Sign Up</Link>
-      )}
-      <hr />
-      {currentUser && (
-        <div>
-
-        </div>
-      )}
-      {props.children}
-    </header>
-  );
+    <div>
+      <Header currentUser={currentUser} handleLogout={handleLogout} />
+      <main>
+        {props.children}
+      </main>
+      {/* <Footer /> */}
+    </div>
+  )
 }
