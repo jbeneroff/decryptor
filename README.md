@@ -26,7 +26,7 @@
 
 ## MVP
 
-The **DeCryptor** MVP is a fullstack web application where users can sign-up/login, view a list of top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency. Non-users can also view the cryptocurrencies and posts but cannot create/edit/delete posts.
+The **DeCryptor** MVP is a fullstack, Ruby on Rails and React, web application where users can sign-up/login, view a list of top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency. Non-users can also view the cryptocurrencies and posts but cannot create/edit/delete posts.
 
 <br>
 
