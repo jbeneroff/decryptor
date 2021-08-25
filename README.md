@@ -56,31 +56,15 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+[Mobile](https://wireframe.cc/3FVOTt)
 
-- Desktop Landing
 
-![Dummy Link](url)
+[Tablet](url)
 
-- Desktop Hero
 
-![Dummy Link](url)
+[Desktop](url)
 
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 #### Component Tree
 
