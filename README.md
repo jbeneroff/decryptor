@@ -19,7 +19,7 @@
 
 ## Overview
 
-**DeCryptor** is an online community where crypto traders and enthusiasts can engage in a discussion and share their thoughts on the the most popular cryptocurriencies.
+**DeCryptor** is an online community where crypto traders and enthusiasts can engage in a discussion and share their thoughts on the the most popular cryptocurrencies.
 
 
 <br>
