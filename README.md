@@ -121,7 +121,7 @@ src
 | Media Queries        |    H     |      2hrs      |         |         |
 | Debugging        |    H     |      6hrs      |         |         |
 | PMVP- Comments        |    M     |      3hrs      |         |         |
-| PMVP- Price Data        |    H     |      3hrs      |         |         |
+| PMVP- Price Data        |    M     |      3hrs      |         |         |
 | PMVP- User Profile        |    L     |      3hrs      |         |         |
 | PMVP- New Posts to Top        |    L     |      2hrs      |         |         |
 | PMVP- Upvoting Posts        |    L     |      3hrs      |         |         |
