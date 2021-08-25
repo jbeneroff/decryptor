@@ -10,19 +10,19 @@ class CryptocurrenciesController < ApplicationController
 
   # GET /cryptocurrencies/1
   def show
-    render json: @cryptocurrency, include: :posts
+    render json: @cryptocurrency, include: :posts, status: :ok
   end
 
   # POST /cryptocurrencies
-  # def create
-  #   @cryptocurrency = Cryptocurrency.new(cryptocurrency_params)
+  def create
+    @cryptocurrency = Cryptocurrency.new(cryptocurrency_params)
 
-  #   if @cryptocurrency.save
-  #     render json: @cryptocurrency, status: :created, location: @cryptocurrency
-  #   else
-  #     render json: @cryptocurrency.errors, status: :unprocessable_entity
-  #   end
-  # end
+    if @cryptocurrency.save
+      render json: @cryptocurrency, status: :created
+    else
+      render json: @cryptocurrency.errors, status: :unprocessable_entity
+    end
+  end
 
   # PATCH/PUT /cryptocurrencies/1
   # def update
@@ -46,7 +46,7 @@ class CryptocurrenciesController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  # def cryptocurrency_params
-  #   params.require(:cryptocurrency).permit(:name, :symbol, :description)
-  # end
+  def cryptocurrency_params
+    params.require(:cryptocurrency).permit(:name, :symbol, :description)
+  end
 end
