@@ -14,14 +14,16 @@ User.destroy_all
 puts "#{User.count} users created"
 
 @btc = Cryptocurrency.create!(name: 'Bitcoin', symbol: 'BTC', description: 'bitcoin description')
-Cryptocurrency.create!(name: 'Ethereum', symbol: 'ETH', description: 'ethereum description')
+@eth = Cryptocurrency.create!(name: 'Ethereum', symbol: 'ETH', description: 'ethereum description')
 Cryptocurrency.create!(name: 'Cardano', symbol: 'ADA', description: 'cardano description')
 Cryptocurrency.create!(name: 'Binance Coin', symbol: 'BNB', description: 'binance coin description')
 Cryptocurrency.create!(name: 'Tether', symbol: 'USDT', description: 'tether description')
-Cryptocurrency.create!(name: 'Dogecoin', symbol: 'DOGE', description: 'dogecoin description')
+@doge = Cryptocurrency.create!(name: 'Dogecoin', symbol: 'DOGE', description: 'dogecoin description')
 
 puts "#{Cryptocurrency.count} cryptos created"
 
-Post.create!(content: 'i love bitcoin', user: @admin, cryptocurrency: @btc)
+Post.create!(content: 'I love bitcoin.', user: @admin, cryptocurrency: @btc)
+Post.create!(content: 'Ethereum is going up!', user: @admin, cryptocurrency: @eth)
+Post.create!(content: 'DOGE to the MOON!!!', user: @admin, cryptocurrency: @doge)
 
 puts "#{Post.count} posts created"
