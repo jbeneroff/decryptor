@@ -84,25 +84,36 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
 [Component Tree](https://whimsical.com/component-tree-YE5zGEApwmTD9BHYUqcSr5)
 
 #### Component Architecture
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
 src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+|__ screens/
+      |__ Login.jsx
+      |__ Register.jsx
+      |__ Cryptocurrencies.jsx
+      |__ CryptocurrencyDetail.jsx
+      |__ Posts.jsx
+      |__ PostCreate.jsx
+      |__ PostEdit.jsx
 |__ components/
       |__ Header.jsx
+      |__ Footer.jsx
 |__ services/
+      |__ api-config.js
+      |__ auth.js
+      |__ cryptocurrencies.js
+      |__ posts.js
+|__ containers/
+      |__ MainContainer.jsx
+|__ layouts/
+      |__ Layout.jsx
+
 
 ```
 
