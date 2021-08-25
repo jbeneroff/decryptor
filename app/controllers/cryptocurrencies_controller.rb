@@ -10,7 +10,7 @@ class CryptocurrenciesController < ApplicationController
 
   # GET /cryptocurrencies/1
   def show
-    render json: @cryptocurrency
+    render json: @cryptocurrency, include: :posts
   end
 
   # POST /cryptocurrencies

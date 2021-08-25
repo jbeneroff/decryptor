@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show update destroy]
+  before_action :set_post, only: %i[show update destroy add_to_cryptocurrency]
   before_action :authorize_request, only: %i[create update destroy]
 
   # GET /posts
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
+    @post.user = @current_user
     if @post.save
       render json: @post, status: :created, location: @post
     else
@@ -39,6 +39,14 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
+  # Get /cryptocurrencies/1/posts/2
+  def add_to_cryptocurrency
+    @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
+    @cryptocurrency.posts << @post
+
+    render json: @cryptocurrency, include: :posts
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -48,6 +56,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:content, :user_id, :cryptocurrency_id)
+    params.require(:post).permit(:content)
   end
 end
