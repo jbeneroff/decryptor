@@ -88,6 +88,13 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 ``` structure
 
 src
+|__ components/
+      |__ Header.jsx
+      |__ Footer.jsx
+|__ containers/
+      |__ MainContainer.jsx
+|__ layouts/
+      |__ Layout.jsx
 |__ screens/
       |__ Login.jsx
       |__ Register.jsx
@@ -96,18 +103,12 @@ src
       |__ Posts.jsx
       |__ PostCreate.jsx
       |__ PostEdit.jsx
-|__ components/
-      |__ Header.jsx
-      |__ Footer.jsx
 |__ services/
       |__ api-config.js
       |__ auth.js
       |__ cryptocurrencies.js
       |__ posts.js
-|__ containers/
-      |__ MainContainer.jsx
-|__ layouts/
-      |__ Layout.jsx
+
 
 
 ```
