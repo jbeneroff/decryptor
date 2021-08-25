@@ -108,15 +108,25 @@ src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Project Proposal and Approval          |    H     |      3hrs      |           |        |
+| Back End Database          |    H     |      3hrs      |           |         |
+| Back End Models         |    H     |      3hrs      |           |         |
+| Back End Controllers          |    H     |      3hrs      |          |         |
+| Back End Routes         |    H     |      3hrs      |         |         |
+| Back End Authentication/Authorization         |    H     |      3hrs      |          |       |
+| Front End Components          |    H     |      3hrs      |           |         |
+| Front End Screens          |    H     |      3hrs      |           |         |
+| Front End Services        |    H     |      3hrs      |          |        |
+| Front End Containers          |    H     |      3hrs      |           |         |
+| Front End Authentication/Authorization         |    H     |      3hrs      |           |        |
+| CSS styling         |    H     |      6hrs      |         |         |
+| Media Queries        |    H     |      2hrs      |         |         |
+| Debugging        |    H     |      6hrs      |         |         |
+| TOTAL               |          |           |          |          |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -133,7 +143,10 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Comments on Posts (CRUD)
+- Real-Time Cryptocurrency Price Data from 3rd Party API on Landing Screen
+- New Posts Go to Top of Page
+- Upvoting System for Posts
 
 ***
 
