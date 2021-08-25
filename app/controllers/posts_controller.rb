@@ -6,20 +6,23 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, include: :cryptocurrency, status: :ok
   end
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post, include: :cryptocurrency, status: :ok
   end
 
   # POST /posts
   def create
     @post = Post.new(post_params)
     @post.user = @current_user
+    @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
+    @post.cryptocurrency = @cryptocurrency
+    @cryptocurrency.posts << @post
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -40,12 +43,12 @@ class PostsController < ApplicationController
   end
 
   # Get /cryptocurrencies/1/posts/2
-  def add_to_cryptocurrency
-    @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
-    @cryptocurrency.posts << @post
+  # def add_to_cryptocurrency
+  #   @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
+  #   @cryptocurrency.posts << @post
 
-    render json: @cryptocurrency, include: :posts
-  end
+  #   render json: @cryptocurrency, include: :posts
+  # end
 
   private
 
