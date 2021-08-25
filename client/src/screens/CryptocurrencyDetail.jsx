@@ -12,7 +12,7 @@ export default function CryptocurrencyDetail(props) {
     const fetchCryptocurrency = async () => {
       const cryptocurrencyData = await getOneCryptocurrency(id)
       setCryptocurrency(cryptocurrencyData)
-      console.log(cryptocurrencyData)
+      console.log(cryptocurrencyData.posts)
     }
     fetchCryptocurrency()
   }, [id])
@@ -21,11 +21,12 @@ export default function CryptocurrencyDetail(props) {
     <div>
       <h1>{cryptocurrency?.name}</h1>
       <h2>{cryptocurrency?.symbol}</h2>
-      <p>{cryptocurrency?.description}</p>
+      <h3>{cryptocurrency?.description}</h3>
       {cryptocurrency?.posts.map((post) => (
         <div key={post.id}>
           <p>{post.content}</p>
-          <p>{post.user_id.username}</p>
+          {/* <p>{post.user.username}</p> */}
+          <p>{post.created_at}</p>
         </div>
       ))}
     </div>
