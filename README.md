@@ -57,13 +57,13 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 #### Wireframes
 
 
-[Mobile- All Screens](https://wireframe.cc/3FVOTt)
+[Mobile- All Screens](https://user-images.githubusercontent.com/85003025/130716759-f8e7e2d5-f1f5-427e-9298-f0060b664db9.png)
 
 
-[Tablet](url)
+[Tablet](https://wireframe.cc/uSm03U)
 
 
-[Desktop](url)
+[Desktop](https://wireframe.cc/dn1QRj)
 
 
 #### Component Tree
@@ -107,20 +107,25 @@ src
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Project Proposal and Approval          |    H     |      3hrs      |           |        |
-| Back End Database          |    H     |      3hrs      |           |         |
-| Back End Models         |    H     |      3hrs      |           |         |
+| Back End Database          |    H     |      1hrs      |           |         |
+| Back End Models         |    H     |      1hrs      |           |         |
 | Back End Controllers          |    H     |      3hrs      |          |         |
-| Back End Routes         |    H     |      3hrs      |         |         |
-| Back End Authentication/Authorization         |    H     |      3hrs      |          |       |
+| Back End Routes         |    H     |      1hrs      |         |         |
+| Back End Authentication/Authorization         |    H     |      1hrs      |          |       |
 | Front End Components          |    H     |      3hrs      |           |         |
 | Front End Screens          |    H     |      3hrs      |           |         |
 | Front End Services        |    H     |      3hrs      |          |        |
 | Front End Containers          |    H     |      3hrs      |           |         |
-| Front End Authentication/Authorization         |    H     |      3hrs      |           |        |
+| Front End Authentication/Authorization         |    H     |      1hrs      |           |        |
 | CSS styling         |    H     |      6hrs      |         |         |
 | Media Queries        |    H     |      2hrs      |         |         |
 | Debugging        |    H     |      6hrs      |         |         |
-| TOTAL               |          |      47hrs     |          |          |
+| PMVP- Comments        |    M     |      3hrs      |         |         |
+| PMVP- Price Data        |    H     |      3hrs      |         |         |
+| PMVP- User Profile        |    L     |      3hrs      |         |         |
+| PMVP- New Posts to Top        |    L     |      2hrs      |         |         |
+| PMVP- Upvoting Posts        |    L     |      3hrs      |         |         |
+| TOTAL               |          |      51hrs     |          |          |
 
 
 <br>
@@ -140,6 +145,7 @@ src
 
 - Comments on Posts (CRUD)
 - Real-Time Cryptocurrency Price Data from 3rd Party API on Landing Screen
+- User Profile Page w/ User's Posts
 - New Posts Go to Top of Page
 - Upvoting System for Posts
 
