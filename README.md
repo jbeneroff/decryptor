@@ -68,13 +68,9 @@ The **DeCryptor** MVP is a fullstack web application made with Ruby on Rails and
 #### Wireframes
 
 
-[Mobile- All Screens](https://user-images.githubusercontent.com/85003025/130716759-f8e7e2d5-f1f5-427e-9298-f0060b664db9.png)
+[Mobile/Tablet- All Screens](https://user-images.githubusercontent.com/85003025/130716759-f8e7e2d5-f1f5-427e-9298-f0060b664db9.png)
 
-
-[Tablet](https://wireframe.cc/uSm03U)
-
-
-[Desktop](https://wireframe.cc/dn1QRj)
+[Desktop- Landing Page](https://wireframe.cc/dn1QRj)
 
 
 #### Component Tree
