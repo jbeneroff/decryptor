@@ -19,38 +19,36 @@
 
 ## Overview
 
-_**DeCryptor** is an online community where crypto traders and enthusiasts can engage in a discussion and share their thoughts on the the most popular cryptocurriencies.
+**DeCryptor** is an online community where crypto traders and enthusiasts can engage in a discussion and share their thoughts on the the most popular cryptocurriencies.
 
 
 <br>
 
 ## MVP
 
-_The **DeCryptor** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+The **DeCryptor** MVP is a fullstack web application where users can sign-up/login, view the list top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency.
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- Ruby on Rails Backend
+- React Frontend
+- Sign-up, Sign-in, Logout for Users 
+- List Cryptocurrencies and Details Page
+- Users can Create, Read, Update, and Delete Posts on a Cryptocurrency Detail Page
+
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | JavaScript library for building user interfaces |
+|   React Router  | Standard library for routing in React |
+| Axios | Promise-based HTTP Client for node.js and the browser |
+|     Ruby on Rails    | Server-side web application framework written in Ruby  |
 
 <br>
 
@@ -141,8 +139,8 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+
