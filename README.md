@@ -53,6 +53,9 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 |   React Router  | Standard library for routing in React |
 | Axios | Promise-based HTTP Client for node.js and the browser |
 |     Ruby on Rails    | Server-side web application framework written in Ruby  |
+|     CORS    | An HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading of resources  |
+|     Bcrypt    | Password-hashing function   |
+|     JWT    | A proposed Internet standard for creating data with optional signature and/or optional encryption whose payload holds JSON that asserts some number of claims  |
 
 <br>
 
