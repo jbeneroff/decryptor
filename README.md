@@ -57,7 +57,7 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 #### Wireframes
 
 
-[Mobile](https://wireframe.cc/3FVOTt)
+[Mobile- All Screens](https://wireframe.cc/3FVOTt)
 
 
 [Tablet](url)
