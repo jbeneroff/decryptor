@@ -26,16 +26,17 @@
 
 ## MVP
 
-The **DeCryptor** MVP is a fullstack web application where users can sign-up/login, view the list top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency.
+The **DeCryptor** MVP is a fullstack web application where users can sign-up/login, view a list of top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency. Non-users can also view the cryptocurrencies and posts but cannot create/edit/delete posts.
 
 <br>
 
 ### Goals
 
 - Ruby on Rails Backend
+- Users, Cryptocurrencies, and Posts tables
 - React Frontend
 - Sign-up, Sign-in, Logout for Users 
-- List Cryptocurrencies and Details Page
+- Cryptocurrencies List Landing Page and Cryptocurrency Details Page w/ Associated Posts
 - Users can Create, Read, Update, and Delete Posts on a Cryptocurrency Detail Page
 
 ### Challenges
