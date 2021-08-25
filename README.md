@@ -114,20 +114,20 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Project Proposal and Approval          |    H     |      3hrs      |           |        |
-| Back End Database          |    H     |      1hrs      |           |         |
-| Back End Models         |    H     |      1hrs      |           |         |
-| Back End Controllers          |    H     |      3hrs      |          |         |
-| Back End Routes         |    H     |      1hrs      |         |         |
-| Back End Authentication/Authorization         |    H     |      1hrs      |          |       |
-| Front End Components          |    H     |      3hrs      |           |         |
-| Front End Screens          |    H     |      3hrs      |           |         |
-| Front End Services        |    H     |      3hrs      |          |        |
-| Front End Containers          |    H     |      3hrs      |           |         |
-| Front End Authentication/Authorization         |    H     |      1hrs      |           |        |
+| Project Proposal and Approval          |    H     |      3hrs      |     3hrs      |    3hrs    |
+| Back End Database          |    H     |      1hrs      |     1hrs      |     1hrs    |
+| Back End Models         |    H     |      1hrs      |     1hrs      |         |
+| Back End Controllers          |    H     |      3hrs      |     1hrs     |         |
+| Back End Routes         |    H     |      1hrs      |    1hrs     |         |
+| Back End Authentication/Authorization         |    H     |      1hrs      |     1hrs     |   1hrs    |
+| Front End Components          |    H     |      3hrs      |      1hrs     |         |
+| Front End Screens          |    H     |      3hrs      |     1hrs      |         |
+| Front End Services        |    H     |      3hrs      |     1hrs     |        |
+| Front End Containers          |    H     |      3hrs      |     1hrs      |         |
+| Front End Authentication/Authorization         |    H     |      1hrs      |     1hrs      |    1hrs    |
 | CSS styling         |    H     |      6hrs      |         |         |
 | Media Queries        |    H     |      2hrs      |         |         |
-| Debugging        |    H     |      6hrs      |         |         |
+| Debugging        |    H     |      6hrs      |    1hrs     |         |
 | PMVP- Comments        |    M     |      3hrs      |         |         |
 | PMVP- Price Data        |    M     |      3hrs      |         |         |
 | PMVP- User Profile        |    L     |      3hrs      |         |         |
