@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Layout(props) {
 
@@ -10,7 +11,7 @@ export default function Layout(props) {
       <main>
         {props.children}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

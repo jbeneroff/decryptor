@@ -7,7 +7,7 @@ export default function Header(props) {
 
   return (
     <div>
-      <h1>DeCryptor</h1>
+      <Link to='/'><h1>DeCryptor</h1></Link>
       {currentUser ? (
         <div>
           <p>{currentUser.username}</p>
