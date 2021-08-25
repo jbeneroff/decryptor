@@ -136,7 +136,8 @@ src
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
+[ERD](https://user-images.githubusercontent.com/85003025/130709409-0a0b285a-a7fc-439c-88b6-26f824b8bf2a.png)
+
 <br>
 
 ***
