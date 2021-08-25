@@ -38,6 +38,9 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 - Sign-up, Sign-in, Logout for Users 
 - Cryptocurrencies List Landing Page and Cryptocurrency Details Page w/ Associated Posts
 - Users can Create, Read, Update, and Delete Posts on a Cryptocurrency Detail Page
+- Styled with CSS/Flexbox
+- Deployed
+- Proper Linting
 
 ### Challenges
 
