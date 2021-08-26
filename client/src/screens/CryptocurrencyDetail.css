@@ -9,7 +9,7 @@
 }
 
 #crypto-detail-name {
-  margin: 5px;
+  margin: 10px 5px 5px 5px;
   font-size: 28px;
   color: #2C9AD5;
 }
@@ -27,8 +27,8 @@
   color: #8BA1CE;
 }
 
-#create-button, #edit-button, #delete-button {
-  margin: 20px 5px 1px 5px;
+#create-button {
+  margin: 10px 5px 1px 5px;
   font-size: 12px;
   background-color: #8BA1CE;
   border: #8BA1CE 1px solid;
@@ -38,16 +38,32 @@
   color: white;
 }
 
+#edit-button, #delete-button {
+  margin: 5px 5px 1px 5px;
+  font-size: 10px;
+  background-color: #8BA1CE;
+  border: #8BA1CE 1px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 20%;
+  color: white;
+}
+
 #post-content {
-  color: #8BA1CE;
+  color: #2C9AD5;
+  margin: 5px;
 }
 
 #post-user {
-  color: #2C9AD5;
+  color: #8BA1CE;
+  margin: 2px;
+  text-align: right;
+  font-size: 12px;
 }
 
 #post-time {
-  font-size: 12px;
+  font-size: 10px;
   color: #ababab;
-  align-self: right;
+  margin: 2px;
+  text-align: right;
 }

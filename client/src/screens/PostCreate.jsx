@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './PostCreate.css'
 
 export default function PostCreate(props) {
 
@@ -25,22 +26,10 @@ export default function PostCreate(props) {
     }))
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   await postPost(id, selectedCryptocurrency)
-  //   hist
-  // }
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const cryptocurrencyItem = await addPostToCrypto(selectedCryptocurrency, content)
-  //   // setCrypto(cryptocurrencyItem)
-  // }
-
   return (
     <div>
       <form>
-        <select onChange={chooseCrypto} defaultValue='default'>
+        <select id='select-crypto' onChange={chooseCrypto} defaultValue='default'>
           <option disabled value='default'>
             -- Select a Crypto --
           </option>
@@ -55,12 +44,12 @@ export default function PostCreate(props) {
           handleCreate(formData, selectedCryptocurrency)
         }}
       >
-        <h3>Create Post</h3>
-        <label>
-          Content
-          <input type='text' name='content' value={content} onChange={handleChange} />
-        </label>
-        <button>Submit</button>
+        <h3 id='create-header'>Create Post</h3>
+        <div className='create-div'>
+          <p>Content</p>
+          <input id='create-input' type='text' name='content' value={content} onChange={handleChange} />
+          <button id='post-button'>Post</button>
+        </div>
       </form>
     </div>
   )
