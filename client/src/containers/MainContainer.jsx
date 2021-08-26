@@ -4,7 +4,7 @@ import { getAllCryptocurrencies } from '../services/cryptocurrencies'
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts'
 import Cryptocurrencies from '../screens/Cryptocurrencies'
 import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
-import Posts from '../screens/Posts'
+// import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
 
@@ -31,10 +31,10 @@ export default function MainContainer(props) {
     fetchPosts()
   }, [])
 
-  const handleCreate = async (formData) => {
-    const postData = await postPost(formData)
+  const handleCreate = async (formData, selectedCryptocurrency) => {
+    const postData = await postPost(formData, selectedCryptocurrency)
     setPosts((prevState) => [...prevState, postData])
-    history.push('/posts')
+    history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
   }
 
   // const handleCreate = async (cryptocurrency, formData) => {

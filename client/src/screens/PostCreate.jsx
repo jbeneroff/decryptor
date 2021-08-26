@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getAllCryptocurrencies } from '../services/cryptocurrencies'
 import { addPostToCrypto, postPost } from '../services/posts'
 
 export default function PostCreate(props) {
@@ -29,11 +28,11 @@ export default function PostCreate(props) {
     }))
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const cryptocurrencyItem = await postPost(id, selectedCryptocurrency)
-    // setCrypto(cryptocurrencyItem)
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   await postPost(id, selectedCryptocurrency)
+  //   hist
+  // }
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault()
@@ -43,7 +42,7 @@ export default function PostCreate(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <select onChange={chooseCrypto} defaultValue='default'>
           <option disabled value='default'>
             -- Select a Crypto --
@@ -52,12 +51,11 @@ export default function PostCreate(props) {
             <option key={cryptocurrency.id} value={cryptocurrency.id}>{cryptocurrency.name}</option>
           ))}
         </select>
-        {/* <button>Select</button> */}
       </form>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleCreate(formData);
+          handleCreate(formData, selectedCryptocurrency)
         }}
       >
         <h3>Create Post</h3>

@@ -43,12 +43,12 @@ class PostsController < ApplicationController
   end
 
   # Get /cryptocurrencies/1/posts/2
-  def add_to_cryptocurrency
-    @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
-    @cryptocurrency.posts << @post
+  # def add_to_cryptocurrency
+  #   @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
+  #   @cryptocurrency.posts << @post
 
-    render json: @cryptocurrency, include: :posts
-  end
+  #   render json: @cryptocurrency, include: :posts
+  # end
 
   private
 
