@@ -1,0 +1,43 @@
+#select-crypto {
+  margin: 10px;
+  background-color:#F9FAFB;
+  color: #2C9AD5;
+  padding: 5px;
+  border: #8BA1CE 2px solid;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+#create-header {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #2C9AD5;
+}
+
+.create-div {
+  margin: 10px;
+}
+
+#create-input {
+  width: 80%;
+  height: 150px;
+  padding: 5px;
+  border: #8BA1CE 2px solid;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#post-button {
+  margin: 10px 5px 1px 5px;
+  font-size: 14px;
+  background-color: #8BA1CE;
+  border: #8BA1CE 1px solid;
+  padding: 8px 10px;
+  border-radius: 10px;
+  width: 20%;
+  color: white;
+}
+
