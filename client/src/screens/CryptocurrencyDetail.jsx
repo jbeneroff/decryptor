@@ -30,8 +30,8 @@ export default function CryptocurrencyDetail(props) {
           if (post?.cryptocurrency_id === cryptocurrency?.id) {
             return (
               <div className='post-div' key={post.id}>
-                <p id='post-user'>{post?.user?.username}</p>
                 <p id='post-content' >{post?.content}</p>
+                <p id='post-user'>{post?.user?.username}</p>
                 <p id='post-time'>{`Posted at ${post.created_at.slice(11, 16)} on ${post.created_at.slice(5, 10)}-${post.created_at.slice(0, 4)}`}</p>
                 {currentUser?.id === post.user_id && (
                   <div>
