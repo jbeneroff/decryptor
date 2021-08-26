@@ -37,12 +37,6 @@ export default function MainContainer(props) {
     history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
   }
 
-  // const handleCreate = async (cryptocurrency, formData) => {
-  //   const postData = await addPostToCrypto(cryptocurrency, formData)
-  //   setPosts((prevState) => [...prevState, postData])
-  //   history.push('/posts')
-  // }
-
 
   const handleUpdate = async (id, formData) => {
     const postData = await putPost(id, formData)

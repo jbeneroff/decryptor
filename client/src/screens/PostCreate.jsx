@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { addPostToCrypto, postPost } from '../services/posts'
 
 export default function PostCreate(props) {
 
   const [selectedCryptocurrency, setSelectedCryptocurrency] = useState('')
-  const { id } = useParams()
   const { cryptocurrencies } = props
 
   const [formData, setFormData] = useState({

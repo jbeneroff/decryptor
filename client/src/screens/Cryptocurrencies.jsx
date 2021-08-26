@@ -6,9 +6,9 @@ export default function Cryptocurrencies(props) {
 
   return (
     <div>
-      <h1>Crypto List</h1>
+      <h1>Cryptocurrencies</h1>
       {cryptocurrencies.map((cryptocurrency) => (
-        <div key={cryptocurrency.id}>
+        <div className='crypto-list' key={cryptocurrency.id}>
           <Link to={`/cryptocurrencies/${cryptocurrency.id}`}>
             <p>{cryptocurrency.name}</p>
           </Link>
