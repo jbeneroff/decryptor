@@ -8,8 +8,6 @@ import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
 
-import React from 'react'
-
 export default function MainContainer(props) {
 
   const [cryptocurrencies, setCryptocurrencies] = useState([])
@@ -61,7 +59,7 @@ export default function MainContainer(props) {
           <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
         <Route path='/posts/new'>
-          <PostCreate handleCreate={handleCreate} />
+          <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate} />
         </Route>
         <Route path='/posts'>
           <Posts posts={posts} />
