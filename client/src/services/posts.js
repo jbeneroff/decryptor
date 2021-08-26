@@ -10,8 +10,8 @@ export const getOnePost = async (id) => {
   return resp.data
 }
 
-export const postPost = async (postData, cryptocurrencyId) => {
-  const resp = await api.post('/posts', { post: postData, cryptocurrencyId: cryptocurrencyId })
+export const postPost = async (postData, cryptocurrency_id) => {
+  const resp = await api.post('/posts', { post: postData, cryptocurrency_id })
   return resp.data
 }
 
