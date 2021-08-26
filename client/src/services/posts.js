@@ -10,8 +10,13 @@ export const getOnePost = async (id) => {
   return resp.data
 }
 
-export const postPost = async (postData) => {
-  const resp = await api.post('/posts', { post: postData })
+export const postPost = async (postData, cryptocurrencyId) => {
+  const resp = await api.post('/posts', { post: postData, cryptocurrencyId: cryptocurrencyId })
+  return resp.data
+}
+
+export const addPostToCrypto = async (cryptocurrencyId, postData) => {
+  const resp = await api.post(`/cryptocurrencies/${cryptocurrencyId}/posts/`, { post: postData })
   return resp.data
 }
 

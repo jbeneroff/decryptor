@@ -8,8 +8,6 @@ import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
 
-import React from 'react'
-
 export default function MainContainer(props) {
 
   const [cryptocurrencies, setCryptocurrencies] = useState([])
@@ -37,7 +35,14 @@ export default function MainContainer(props) {
     const postData = await postPost(formData)
     setPosts((prevState) => [...prevState, postData])
     history.push('/posts')
-  };
+  }
+
+  // const handleCreate = async (cryptocurrency, formData) => {
+  //   const postData = await addPostToCrypto(cryptocurrency, formData)
+  //   setPosts((prevState) => [...prevState, postData])
+  //   history.push('/posts')
+  // }
+
 
   const handleUpdate = async (id, formData) => {
     const postData = await putPost(id, formData)
@@ -61,7 +66,7 @@ export default function MainContainer(props) {
           <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
         <Route path='/posts/new'>
-          <PostCreate handleCreate={handleCreate} />
+          <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate} />
         </Route>
         <Route path='/posts'>
           <Posts posts={posts} />
