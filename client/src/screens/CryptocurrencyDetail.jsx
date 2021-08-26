@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getOneCryptocurrency } from '../services/cryptocurrencies'
+import './CryptocurrencyDetail.css'
 
 export default function CryptocurrencyDetail(props) {
 

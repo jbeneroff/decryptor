@@ -8,13 +8,16 @@ export default function Cryptocurrencies(props) {
   return (
     <div>
       <h1 id='list-title'>Cryptocurrencies</h1>
-      {cryptocurrencies.map((cryptocurrency) => (
-        <div className='crypto-list' key={cryptocurrency.id}>
-          <Link className='crypto-link' to={`/cryptocurrencies/${cryptocurrency.id}`}>
-            <p className='crypto-name'>{cryptocurrency.name}</p>
-          </Link>
-        </div>
-      ))}
+      <div className='crypto-list'>
+        {cryptocurrencies.map((cryptocurrency) => (
+          <div className='crypto-card' key={cryptocurrency.id}>
+            <Link className='crypto-link' to={`/cryptocurrencies/${cryptocurrency.id}`}>
+              <p className='crypto-name'>{cryptocurrency.name}</p>
+              <p className='crypto-symbol'>{cryptocurrency.symbol}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
