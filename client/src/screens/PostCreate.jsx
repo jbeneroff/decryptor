@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getAllCryptocurrencies } from '../services/cryptocurrencies'
-import { postPost } from '../services/posts'
+import { addPostToCrypto, postPost } from '../services/posts'
 
 export default function PostCreate(props) {
 
@@ -34,6 +34,12 @@ export default function PostCreate(props) {
     const cryptocurrencyItem = await postPost(id, selectedCryptocurrency)
     // setCrypto(cryptocurrencyItem)
   }
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const cryptocurrencyItem = await addPostToCrypto(selectedCryptocurrency, content)
+  //   // setCrypto(cryptocurrencyItem)
+  // }
 
   return (
     <div>

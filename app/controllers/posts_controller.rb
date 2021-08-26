@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show update destroy add_to_cryptocurrency]
-  before_action :authorize_request, only: %i[create update destroy]
+  before_action :set_post, only: %i[show update destroy]
+  # before_action :authorize_request, only: %i[create update destroy]
 
   # GET /posts
   def index
@@ -43,12 +43,12 @@ class PostsController < ApplicationController
   end
 
   # Get /cryptocurrencies/1/posts/2
-  # def add_to_cryptocurrency
-  #   @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
-  #   @cryptocurrency.posts << @post
+  def add_to_cryptocurrency
+    @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
+    @cryptocurrency.posts << @post
 
-  #   render json: @cryptocurrency, include: :posts
-  # end
+    render json: @cryptocurrency, include: :posts
+  end
 
   private
 
@@ -59,6 +59,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:content, :cryptocurrency)
+    params.require(:post).permit(:content)
   end
 end
