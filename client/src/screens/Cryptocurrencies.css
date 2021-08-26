@@ -1,0 +1,36 @@
+#list-title {
+  color: #2C9AD5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.crypto-list {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 40px 70px;
+}
+
+.crypto-card {
+  padding: 15px;
+  background-color: #9FD8F1;
+  border-radius: 10px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.crypto-link {
+  text-decoration: none;
+}
+
+.crypto-name {
+  margin: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.crypto-symbol {
+  margin: 10px;
+  color: white;
+  font-size: 18px;
+}
