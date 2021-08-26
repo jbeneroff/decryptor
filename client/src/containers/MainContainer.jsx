@@ -51,7 +51,7 @@ export default function MainContainer(props) {
         return post.id === Number(id) ? postData : post
       })
     )
-    history.push('/posts')
+    history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
   }
 
   const handleDelete = async (id) => {
@@ -63,23 +63,19 @@ export default function MainContainer(props) {
     <div>
       <Switch>
         <Route path='/posts/:id/edit'>
-          <PostEdit posts={posts} handleUpdate={handleUpdate} />
+          <PostEdit posts={posts} handleUpdate={handleUpdate} cryptocurrencies={cryptocurrencies} />
         </Route>
         <Route path='/posts/new'>
           <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate} />
         </Route>
-        <Route path='/posts'>
+        {/* <Route path='/posts'>
           <Posts posts={posts} />
-        </Route>
+        </Route> */}
         <Route path='/cryptocurrencies/:id'>
-          <CryptocurrencyDetail posts={posts} />
+          <CryptocurrencyDetail posts={posts} currentUser={currentUser} handleDelete={handleDelete} />
         </Route>
         <Route path='/'>
-          <Cryptocurrencies
-            cryptocurrencies={cryptocurrencies}
-            handleDelete={handleDelete}
-            currentUser={currentUser}
-          />
+          <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />
         </Route>
       </Switch>
     </div>
