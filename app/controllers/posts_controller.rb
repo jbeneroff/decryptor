@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = @current_user
-    @cryptocurrency = Cryptocurrency.where(params[:cryptocurrency_id])
+    @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
     @post.cryptocurrency = @cryptocurrency
     @cryptocurrency.posts << @post
     if @post.save

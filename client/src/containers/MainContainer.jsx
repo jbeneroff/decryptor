@@ -51,7 +51,6 @@ export default function MainContainer(props) {
         return post.id === Number(id) ? postData : post
       })
     )
-    console.log(postData)
     history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
   }
 
