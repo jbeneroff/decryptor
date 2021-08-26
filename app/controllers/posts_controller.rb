@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show update destroy]
-  # before_action :authorize_request, only: %i[create update destroy]
+  before_action :authorize_request, only: %i[create update destroy]
 
   # GET /posts
   def index
