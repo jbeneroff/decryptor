@@ -22,16 +22,22 @@ export default function CryptocurrencyDetail(props) {
       <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
       <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
       <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>
-      <Link to='/posts/new'>
-        <button id='create-button'>Create Post</button>
-      </Link>
+      {currentUser && (
+        <div>
+          <Link to='/posts/new'>
+            <button id='create-button'>+</button>
+          </Link>
+        </div>
+      )}
       <div>
         {posts.map((post) => {
           if (post?.cryptocurrency_id === cryptocurrency?.id) {
             return (
               <div className='post-div' key={post.id}>
-                <p id='post-content' >{post?.content}</p>
                 <p id='post-user'>{post?.user?.username}</p>
+                {/* <p>{cryptocurrency?.symbol}</p> */}
+                <p id='post-content' >{`#${cryptocurrency?.symbol} ${post?.content}`}</p>
+                {/* <p id='post-user'>{post?.user?.username}</p> */}
                 <p id='post-time'>{`Posted at ${post.created_at.slice(11, 16)} on ${post.created_at.slice(5, 10)}-${post.created_at.slice(0, 4)}`}</p>
                 {currentUser?.id === post.user_id && (
                   <div>

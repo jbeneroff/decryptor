@@ -28,7 +28,7 @@ export default function PostCreate(props) {
 
   return (
     <div>
-      <h3 id='create-header'>Create Post</h3>
+      <h3 id='create-header'>Create a New Post</h3>
       <form id='select-form'>
         <select id='select-crypto' onChange={chooseCrypto} defaultValue='default'>
           <option disabled value='default'>
