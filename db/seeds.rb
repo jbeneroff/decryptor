@@ -44,3 +44,5 @@ puts "#{Cryptocurrency.count} cryptos created"
 puts "#{Post.count} posts created"
 
 Comment.create!(content: 'More like 10k...', user: @admin, post: @post1)
+
+puts "#{Comment.count} comments created"
