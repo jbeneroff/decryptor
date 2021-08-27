@@ -8,6 +8,8 @@ import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
 // import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
+import CommentCreate from '../components/CommentCreate'
+import CommentEdit from '../screens/CommentEdit'
 
 export default function MainContainer(props) {
 
@@ -37,7 +39,6 @@ export default function MainContainer(props) {
     const fetchComments = async () => {
       const commentList = await getAllComments()
       setComments(commentList)
-      console.log(commentList)
     }
     fetchComments()
   }, [])
@@ -46,6 +47,12 @@ export default function MainContainer(props) {
     const postData = await postPost(formData, selectedCryptocurrency)
     setPosts((prevState) => [...prevState, postData])
     history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
+  }
+
+  const handleCreateComment = async (formData, post) => {
+    const commentData = await postComment(formData, post)
+    setComments((prevState) => [...prevState, commentData])
+    history.goBack()
   }
 
 
@@ -59,14 +66,36 @@ export default function MainContainer(props) {
     history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
   }
 
+  const handleUpdateComment = async (id, formData) => {
+    const commentData = await putComment(id, formData)
+    console.log(commentData)
+    setComments((prevState) =>
+      prevState.map((comment) => {
+        return comment.id === Number(id) ? commentData : comment
+      })
+    )
+    history.goBack()
+  }
+
   const handleDelete = async (id) => {
     await deletePost(id)
     setPosts((prevState) => prevState.filter((post) => post.id !== id))
   }
 
+  const handleDeleteComment = async (id) => {
+    await deleteComment(id)
+    setComments((prevState) => prevState.filter((comment) => comment.id !== id))
+  }
+
   return (
     <div>
       <Switch>
+        <Route path='/comments/:id/edit'>
+          <CommentEdit posts={posts} handleUpdateComment={handleUpdateComment} comments={comments} />
+        </Route>
+        {/* <Route path='/comments/new'>
+          <CommentCreate posts={posts} handleCreateComment={handleCreateComment} />
+        </Route> */}
         <Route path='/posts/:id/edit'>
           <PostEdit posts={posts} handleUpdate={handleUpdate} cryptocurrencies={cryptocurrencies} />
         </Route>
@@ -77,7 +106,7 @@ export default function MainContainer(props) {
           <Posts posts={posts} />
         </Route> */}
         <Route path='/cryptocurrencies/:id'>
-          <CryptocurrencyDetail posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} />
+          <CryptocurrencyDetail handleCreateComment={handleCreateComment} posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} handleDeleteComment={handleDeleteComment} />
         </Route>
         <Route path='/'>
           <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />
