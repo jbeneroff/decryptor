@@ -125,9 +125,9 @@ src
 | Front End Services        |    H     |      3hrs      |     1hrs     |        |
 | Front End Containers          |    H     |      3hrs      |     1hrs      |         |
 | Front End Authentication/Authorization         |    H     |      1hrs      |     1hrs      |    1hrs    |
-| CSS styling         |    H     |      6hrs      |         |         |
+| CSS styling         |    H     |      6hrs      |     4hrs    |         |
 | Media Queries        |    H     |      2hrs      |         |         |
-| Debugging        |    H     |      6hrs      |    1hrs     |         |
+| Debugging        |    H     |      6hrs      |    4hrs     |         |
 | PMVP- Comments        |    M     |      3hrs      |         |         |
 | PMVP- Price Data        |    M     |      3hrs      |         |         |
 | PMVP- User Profile        |    L     |      3hrs      |         |         |

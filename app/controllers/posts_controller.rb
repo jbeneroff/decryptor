@@ -6,12 +6,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts, include: %i[cryptocurrency user], status: :ok
+    render json: @posts, include: %i[cryptocurrency user comments], status: :ok
   end
 
   # GET /posts/1
   def show
-    render json: @post, include: %i[cryptocurrency user], status: :ok
+    render json: @post, include: %i[cryptocurrency user comments], status: :ok
   end
 
   # POST /posts
@@ -41,14 +41,6 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
   end
-
-  # Get /cryptocurrencies/1/posts/2
-  # def add_to_cryptocurrency
-  #   @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
-  #   @cryptocurrency.posts << @post
-
-  #   render json: @cryptocurrency, include: :posts
-  # end
 
   private
 

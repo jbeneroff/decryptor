@@ -10,6 +10,7 @@
 
 #signup-header {
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #signup-username, #signup-password, #signup-email {

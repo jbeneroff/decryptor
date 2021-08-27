@@ -1,15 +1,16 @@
 #list-title {
   color: #2C9AD5;
   font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
+  margin: 25px 0px 0px 0px;
 }
 
 .crypto-list {
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: 40px 70px;
+  margin: 20px 70px 40px 70px;
 }
 
 .crypto-card {

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { getAllCryptocurrencies } from '../services/cryptocurrencies'
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts'
+import { getAllComments, postComment, putComment, deleteComment } from '../services/comments'
 import Cryptocurrencies from '../screens/Cryptocurrencies'
 import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
 // import Posts from '../screens/Posts'
@@ -12,6 +13,7 @@ export default function MainContainer(props) {
 
   const [cryptocurrencies, setCryptocurrencies] = useState([])
   const [posts, setPosts] = useState([])
+  const [comments, setComments] = useState([])
   const { currentUser } = props
   const history = useHistory()
 
@@ -29,6 +31,15 @@ export default function MainContainer(props) {
       setPosts(postList)
     }
     fetchPosts()
+  }, [])
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const commentList = await getAllComments()
+      setComments(commentList)
+      console.log(commentList)
+    }
+    fetchComments()
   }, [])
 
   const handleCreate = async (formData, selectedCryptocurrency) => {
@@ -66,7 +77,7 @@ export default function MainContainer(props) {
           <Posts posts={posts} />
         </Route> */}
         <Route path='/cryptocurrencies/:id'>
-          <CryptocurrencyDetail posts={posts} currentUser={currentUser} handleDelete={handleDelete} />
+          <CryptocurrencyDetail posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} />
         </Route>
         <Route path='/'>
           <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />

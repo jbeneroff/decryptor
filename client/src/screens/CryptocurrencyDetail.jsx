@@ -7,7 +7,7 @@ export default function CryptocurrencyDetail(props) {
 
   const [cryptocurrency, setCryptocurrency] = useState(null)
   const { id } = useParams()
-  const { posts, handleDelete, currentUser } = props
+  const { posts, handleDelete, currentUser, comments } = props
 
   useEffect(() => {
     const fetchCryptocurrency = async () => {
@@ -35,9 +35,7 @@ export default function CryptocurrencyDetail(props) {
             return (
               <div className='post-div' key={post.id}>
                 <p id='post-user'>{post?.user?.username}</p>
-                {/* <p>{cryptocurrency?.symbol}</p> */}
                 <p id='post-content' >{`#${cryptocurrency?.symbol} ${post?.content}`}</p>
-                {/* <p id='post-user'>{post?.user?.username}</p> */}
                 <p id='post-time'>{`Posted at ${post.created_at.slice(11, 16)} on ${post.created_at.slice(5, 10)}-${post.created_at.slice(0, 4)}`}</p>
                 {currentUser?.id === post.user_id && (
                   <div>
@@ -47,6 +45,18 @@ export default function CryptocurrencyDetail(props) {
                     <button id='delete-button' onClick={() => handleDelete(post.id)}>Delete</button>
                   </div>
                 )}
+                <div>
+                  {comments.map((comment) => {
+                    if (comment?.post_id === post?.id) {
+                      return (
+                        <div className='comment-div' key={comment.id}>
+                          <p>{comment?.user.username}</p>
+                          <p>{comment?.content}</p>
+                        </div>
+                      )
+                    }
+                  })}
+                </div>
               </div>
             )
           }
