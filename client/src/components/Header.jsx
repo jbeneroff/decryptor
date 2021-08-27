@@ -19,7 +19,7 @@ export default function Header(props) {
       ) : (
         <div className='non-user-nav'>
           <Link id='cryptos' to='/'>Cryptocurrencies</Link>
-          <Link id='login' to='/login'>Login</Link>
+          <Link id='login' to='/login'>Sign In</Link>
           <Link id='sign-up' to='/sign-up'>Sign Up</Link>
         </div>
       )}
