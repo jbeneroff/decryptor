@@ -18,20 +18,20 @@ export default function CryptocurrencyDetail(props) {
     fetchCryptocurrency()
   }, [id])
 
-  // const showComments = (post) => {
-  //   // e.preventDefault()
-  //   console.log('clicked')
-  //   comments.map((comment) => {
-  //     if (comment?.post_id === post?.id) {
-  //       return (
-  //         <div className='comment-div' key={comment.id}>
-  //           <p id='commenter'>{comment?.user.username}</p>
-  //           <p id='comment-content'>{comment?.content}</p>
-  //         </div>
-  //       )
-  //     }
-  //   })
-  // }
+  const showComments = (post) => {
+    // e.preventDefault()
+    console.log('clicked')
+    comments.map((comment) => {
+      if (comment?.post_id === post?.id) {
+        return (
+          <div className='comment-div' key={comment.id}>
+            <p id='commenter'>{comment?.user.username}</p>
+            <p id='comment-content'>{comment?.content}</p>
+          </div>
+        )
+      }
+    })
+  }
 
   return (
     <div>
@@ -62,9 +62,9 @@ export default function CryptocurrencyDetail(props) {
                   </div>
                 )}
                 <div>
-                  {/* <form onSubmit={showComments(post)}>
+                  <form onSubmit={showComments(post)}>
                     <button type='submit' id='show-button' >Comments</button>
-                  </form> */}
+                  </form>
                   {comments.map((comment) => {
                     if (comment?.post_id === post?.id) {
                       return (
@@ -85,9 +85,6 @@ export default function CryptocurrencyDetail(props) {
                   })}
                   {currentUser && (
                     <div>
-                      <Link to='/comments/new'>
-                        <button id='create-comment-button'>+</button>
-                      </Link>
                       <CommentCreate post={post} handleCreateComment={handleCreateComment} />
                     </div>
                   )}
