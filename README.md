@@ -26,7 +26,7 @@
 
 ## MVP
 
-The **DeCryptor** MVP is a fullstack web application where users can sign-up/login, view a list of top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency. Non-users can also view the cryptocurrencies and posts but cannot create/edit/delete posts.
+The **DeCryptor** MVP is a fullstack web application made with Ruby on Rails and React, where users can sign-up/login, view a list of top cryptocurrencies, and create/edit/delete posts on the details page of a specific cryptocurrency. Non-users can also view the cryptocurrencies and posts but cannot create/edit/delete posts.
 
 <br>
 
@@ -68,13 +68,9 @@ The **DeCryptor** MVP is a fullstack web application where users can sign-up/log
 #### Wireframes
 
 
-[Mobile- All Screens](https://user-images.githubusercontent.com/85003025/130716759-f8e7e2d5-f1f5-427e-9298-f0060b664db9.png)
+[Mobile/Tablet- All Screens](https://user-images.githubusercontent.com/85003025/130716759-f8e7e2d5-f1f5-427e-9298-f0060b664db9.png)
 
-
-[Tablet](https://wireframe.cc/uSm03U)
-
-
-[Desktop](https://wireframe.cc/dn1QRj)
+[Desktop- Landing Page](https://wireframe.cc/dn1QRj)
 
 
 #### Component Tree
@@ -118,20 +114,20 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Project Proposal and Approval          |    H     |      3hrs      |           |        |
-| Back End Database          |    H     |      1hrs      |           |         |
-| Back End Models         |    H     |      1hrs      |           |         |
-| Back End Controllers          |    H     |      3hrs      |          |         |
-| Back End Routes         |    H     |      1hrs      |         |         |
-| Back End Authentication/Authorization         |    H     |      1hrs      |          |       |
-| Front End Components          |    H     |      3hrs      |           |         |
-| Front End Screens          |    H     |      3hrs      |           |         |
-| Front End Services        |    H     |      3hrs      |          |        |
-| Front End Containers          |    H     |      3hrs      |           |         |
-| Front End Authentication/Authorization         |    H     |      1hrs      |           |        |
-| CSS styling         |    H     |      6hrs      |         |         |
+| Project Proposal and Approval          |    H     |      3hrs      |     3hrs      |    3hrs    |
+| Back End Database          |    H     |      1hrs      |     1hrs      |     1hrs    |
+| Back End Models         |    H     |      1hrs      |     1hrs      |         |
+| Back End Controllers          |    H     |      3hrs      |     1hrs     |         |
+| Back End Routes         |    H     |      1hrs      |    1hrs     |         |
+| Back End Authentication/Authorization         |    H     |      1hrs      |     1hrs     |   1hrs    |
+| Front End Components          |    H     |      3hrs      |      1hrs     |         |
+| Front End Screens          |    H     |      3hrs      |     1hrs      |         |
+| Front End Services        |    H     |      3hrs      |     1hrs     |        |
+| Front End Containers          |    H     |      3hrs      |     1hrs      |         |
+| Front End Authentication/Authorization         |    H     |      1hrs      |     1hrs      |    1hrs    |
+| CSS styling         |    H     |      6hrs      |     4hrs    |         |
 | Media Queries        |    H     |      2hrs      |         |         |
-| Debugging        |    H     |      6hrs      |         |         |
+| Debugging        |    H     |      6hrs      |    4hrs     |         |
 | PMVP- Comments        |    M     |      3hrs      |         |         |
 | PMVP- Price Data        |    M     |      3hrs      |         |         |
 | PMVP- User Profile        |    L     |      3hrs      |         |         |
