@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import './SignUp.css'
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
@@ -18,44 +20,47 @@ export default function SignUp(props) {
   }
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        handleRegister(formData)
-      }}
-    >
-      <h3>Sign Up</h3>
-      <label>
-        Username:
+    <div className='signup-form'>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          handleRegister(formData)
+        }}
+      >
+        <h3 id='signup-header'>Sign Up</h3>
         <input
+          id='signup-username'
           type='text'
           name='username'
           value={formData.username}
           onChange={handleChange}
+          placeholder='Username'
         />
-      </label>
-      <br />
-      <label>
-        Email:
+        <br />
         <input
+          id='signup-email'
           type='text'
           name='email'
           value={formData.email}
           onChange={handleChange}
+          placeholder='Email Address'
         />
-      </label>
-      <br />
-      <label>
-        Password:
+        <br />
         <input
+          id='signup-password'
           type='password'
           name='password'
           value={formData.password}
           onChange={handleChange}
+          placeholder='Password (6+ characters)'
         />
-      </label>
-      <br />
-      <button>Submit</button>
-    </form>
+        <br />
+        <button id='register-button'>Sign Up</button>
+        <h5 id='yes-account-header'>Already have an account?</h5>
+        <Link to='/login'>
+          <button id='login-button'>Sign In</button>
+        </Link>
+      </form>
+    </div>
   )
 }
