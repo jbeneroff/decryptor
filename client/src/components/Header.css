@@ -23,12 +23,11 @@
   flex-direction: column;
   padding: 22px 15px 15px 15px;
   margin-right: 2px;
-
 }
 
 #cryptos, #username, #logout, #new-post, #login, #sign-up {
   margin: 6px 5px;
-  text-align: center;
+  /* text-align: center; */
   padding: 1px;
   text-decoration: none;
   font-size: 14px;
@@ -39,5 +38,14 @@
   color: #2C9AD5;
   letter-spacing: 1px;
   text-align: right;
+}
+
+@media only screen and (min-width: 768px) {
+  #title {
+    font-size: 40px;
+  }
+  .user-nav, .non-user-nav {
+    flex-direction: row;
+  }
 }
 

@@ -23,7 +23,6 @@ export default function CommentCreate(props) {
 
   return (
     <div>
-      {/* <h3 id='create-comment-header'>Comment</h3> */}
       <form id='input-form' onSubmit={(e) => {
         e.preventDefault()
         handleCreateComment(formData, post.id)
