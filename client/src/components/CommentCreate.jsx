@@ -23,15 +23,15 @@ export default function CommentCreate(props) {
 
   return (
     <div>
-      <h3 id='create-comment-header'>Comment</h3>
+      {/* <h3 id='create-comment-header'>Comment</h3> */}
       <form id='input-form' onSubmit={(e) => {
         e.preventDefault()
-        handleCreateComment(formData, post)
+        handleCreateComment(formData, post.id)
       }}>
         <div className='create-comment-div'>
           <textarea id='create-comment-input' type='text' name='content' value={content} onChange={handleChange}
             placeholder='What are your thoughts?' />
-          <button id='post-comment-button'>Post</button>
+          <button id='post-comment-button'>Comment</button>
         </div>
       </form>
     </div>

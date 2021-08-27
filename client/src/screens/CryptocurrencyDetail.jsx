@@ -8,7 +8,7 @@ export default function CryptocurrencyDetail(props) {
 
   const [cryptocurrency, setCryptocurrency] = useState(null)
   const { id } = useParams()
-  const { posts, handleDelete, currentUser, comments, handleCreateComment } = props
+  const { posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
 
   useEffect(() => {
     const fetchCryptocurrency = async () => {
@@ -73,10 +73,10 @@ export default function CryptocurrencyDetail(props) {
                           <p id='comment-content'>{comment?.content}</p>
                           {currentUser?.id === comment.user_id && (
                             <div>
-                              <button id='delete-comment' onClick={() => handleDelete(post.id)}>Delete</button>
                               <Link to={`/comments/${comment.id}/edit`}>
                                 <button id='edit-comment'>Edit</button>
                               </Link>
+                              <button id='delete-comment' onClick={() => handleDeleteComment(comment.id)}>Delete</button>
                             </div>
                           )}
                         </div>
