@@ -8,6 +8,7 @@ import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
 // import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
+import CommentCreate from '../components/CommentCreate'
 import CommentEdit from '../screens/CommentEdit'
 
 export default function MainContainer(props) {
@@ -51,7 +52,7 @@ export default function MainContainer(props) {
   const handleCreateComment = async (formData, post) => {
     const commentData = await postComment(formData, post)
     setComments((prevState) => [...prevState, commentData])
-    // history.push(`/cryptocurrencies/${postData.cryptocurrency_id}`)
+    history.goBack()
   }
 
 
@@ -73,7 +74,7 @@ export default function MainContainer(props) {
         return comment.id === Number(id) ? commentData : comment
       })
     )
-    history.push(`/cryptocurrencies/${commentData.post_id.cryptocurrency_id}`)
+    history.goBack()
   }
 
   const handleDelete = async (id) => {
@@ -92,6 +93,9 @@ export default function MainContainer(props) {
         <Route path='/comments/:id/edit'>
           <CommentEdit posts={posts} handleUpdateComment={handleUpdateComment} comments={comments} />
         </Route>
+        {/* <Route path='/comments/new'>
+          <CommentCreate posts={posts} handleCreateComment={handleCreateComment} />
+        </Route> */}
         <Route path='/posts/:id/edit'>
           <PostEdit posts={posts} handleUpdate={handleUpdate} cryptocurrencies={cryptocurrencies} />
         </Route>
@@ -102,7 +106,7 @@ export default function MainContainer(props) {
           <Posts posts={posts} />
         </Route> */}
         <Route path='/cryptocurrencies/:id'>
-          <CryptocurrencyDetail posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} handleDeleteComment={handleDeleteComment} />
+          <CryptocurrencyDetail handleCreateComment={handleCreateComment} posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} handleDeleteComment={handleDeleteComment} />
         </Route>
         <Route path='/'>
           <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />
