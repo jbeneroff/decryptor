@@ -28,7 +28,8 @@ export default function PostCreate(props) {
 
   return (
     <div>
-      <form>
+      <h3 id='create-header'>Create a New Post</h3>
+      <form id='select-form'>
         <select id='select-crypto' onChange={chooseCrypto} defaultValue='default'>
           <option disabled value='default'>
             -- Select a Crypto --
@@ -38,16 +39,12 @@ export default function PostCreate(props) {
           ))}
         </select>
       </form>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleCreate(formData, selectedCryptocurrency)
-        }}
-      >
-        <h3 id='create-header'>Create Post</h3>
+      <form id='input-form' onSubmit={(e) => {
+        e.preventDefault()
+        handleCreate(formData, selectedCryptocurrency)
+      }}>
         <div className='create-div'>
-          <p>Content</p>
-          <input id='create-input' type='text' name='content' value={content} onChange={handleChange} />
+          <textarea id='create-input' type='text' name='content' value={content} onChange={handleChange} placeholder='What are your thoughts?' />
           <button id='post-button'>Post</button>
         </div>
       </form>

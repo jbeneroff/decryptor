@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import './PostEdit.css'
 
 export default function PostEdit(props) {
   const [formData, setFormData] = useState({
@@ -32,16 +33,16 @@ export default function PostEdit(props) {
       e.preventDefault();
       handleUpdate(id, formData);
     }}>
-      <label>
-        Content:
-        <input
+      <h3 id='edit-header'>Edit Your Post</h3>
+      <div className='edit-div'>
+        <textarea id='edit-input'
           type='text'
           name='content'
           value={formData.content}
           onChange={handleChange}
         />
-      </label>
-      <button>Submit</button>
+        <button id='submit-edit'>Submit Changes</button>
+      </div>
     </form>
   )
 }

@@ -1,26 +1,14 @@
-#select-crypto {
+.edit-div {
   margin: 10px;
-  background-color:#F9FAFB;
-  color: #2C9AD5;
-  padding: 5px;
-  border: #8BA1CE 2px solid;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'Roboto', sans-serif;
 }
 
-#create-header {
+#edit-header {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   color: #2C9AD5;
 }
 
-.create-div {
-  margin: 10px;
-}
-
-#create-input {
+#edit-input {
   width: 80%;
   height: 150px;
   padding: 5px;
@@ -30,7 +18,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-#post-button {
+#submit-edit {
   margin: 10px 5px 1px 5px;
   font-size: 14px;
   background-color: #8BA1CE;
@@ -40,4 +28,3 @@
   width: 20%;
   color: white;
 }
-

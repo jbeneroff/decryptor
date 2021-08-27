@@ -11,7 +11,7 @@ export default function Header(props) {
       <Link to='/' id='title-link'><h1 id='title'>DeCryptor</h1></Link>
       {currentUser ? (
         <div className='user-nav'>
-          <p id='username'>{`Welcome, ${currentUser.username}`}</p>
+          <p id='username'>{`Hello, ${currentUser.username}`}</p>
           <Link id='cryptos' to='/'>Cryptocurrencies</Link>
           <Link id='new-post' to='/posts/new'>Create Post</Link>
           <button id='logout' onClick={handleLogout}>Sign Out</button>
@@ -19,7 +19,7 @@ export default function Header(props) {
       ) : (
         <div className='non-user-nav'>
           <Link id='cryptos' to='/'>Cryptocurrencies</Link>
-          <Link id='login' to='/login'>Login</Link>
+          <Link id='login' to='/login'>Sign In</Link>
           <Link id='sign-up' to='/sign-up'>Sign Up</Link>
         </div>
       )}

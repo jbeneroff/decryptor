@@ -21,15 +21,15 @@
 .user-nav, .non-user-nav {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  /* justify-content: space-between; */
-  /* flex-wrap: wrap; */
+  padding: 22px 15px 15px 15px;
+  margin-right: 2px;
+
 }
 
 #cryptos, #username, #logout, #new-post, #login, #sign-up {
-  margin: 8px 5px;
+  margin: 6px 5px;
   text-align: center;
-  /* padding: 5px; */
+  padding: 1px;
   text-decoration: none;
   font-size: 14px;
   line-height: 5px;
@@ -38,5 +38,6 @@
   background: none;
   color: #2C9AD5;
   letter-spacing: 1px;
+  text-align: right;
 }
 

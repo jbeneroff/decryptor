@@ -1,0 +1,14 @@
+#signin-button, #signup-button {
+  margin: 10px 5px 1px 5px;
+  font-size: 14px;
+  background-color: #8BA1CE;
+  border: #8BA1CE 1px solid;
+  padding: 8px 10px;
+  border-radius: 10px;
+  width: 20%;
+  color: white;
+}
+
+#signin-username {
+  /* border: none; */
+}
