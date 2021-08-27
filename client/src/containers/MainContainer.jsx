@@ -91,7 +91,7 @@ export default function MainContainer(props) {
     <div>
       <Switch>
         <Route path='/comments/:id/edit'>
-          <CommentEdit posts={posts} handleUpdateComment={handleUpdateComment} comments={comments} />
+          <CommentEdit posts={posts} currentUser={currentUser} handleUpdateComment={handleUpdateComment} comments={comments} />
         </Route>
         {/* <Route path='/comments/new'>
           <CommentCreate posts={posts} handleCreateComment={handleCreateComment} />

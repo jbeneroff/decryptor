@@ -7,6 +7,7 @@ import './CryptocurrencyDetail.css'
 export default function CryptocurrencyDetail(props) {
 
   const [cryptocurrency, setCryptocurrency] = useState(null)
+  const [isCommentsShow, setIsCommentsShow] = useState(false)
   const { id } = useParams()
   const { posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
 
@@ -19,19 +20,13 @@ export default function CryptocurrencyDetail(props) {
   }, [id])
 
   const showComments = (post) => {
-    // e.preventDefault()
-    console.log('clicked')
-    comments.map((comment) => {
-      if (comment?.post_id === post?.id) {
-        return (
-          <div className='comment-div' key={comment.id}>
-            <p id='commenter'>{comment?.user.username}</p>
-            <p id='comment-content'>{comment?.content}</p>
-          </div>
-        )
-      }
-    })
+    if (isCommentsShow === post.id) {
+      setIsCommentsShow(false)
+    } else {
+      setIsCommentsShow(post.id)
+    }
   }
+
 
   return (
     <div>
@@ -61,10 +56,8 @@ export default function CryptocurrencyDetail(props) {
                     </Link>
                   </div>
                 )}
-                <div>
-                  <form onSubmit={showComments(post)}>
-                    <button type='submit' id='show-button' >Comments</button>
-                  </form>
+                <button id='show-button' onClick={() => showComments(post)}>Comments</button>
+                {isCommentsShow === post.id && <div>
                   {comments.map((comment) => {
                     if (comment?.post_id === post?.id) {
                       return (
@@ -88,7 +81,7 @@ export default function CryptocurrencyDetail(props) {
                       <CommentCreate post={post} handleCreateComment={handleCreateComment} />
                     </div>
                   )}
-                </div>
+                </div>}
               </div>
             )
           }
