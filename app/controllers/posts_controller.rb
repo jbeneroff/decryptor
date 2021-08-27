@@ -42,14 +42,6 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
-  # Get /cryptocurrencies/1/posts/2
-  # def add_to_cryptocurrency
-  #   @cryptocurrency = Cryptocurrency.find(params[:cryptocurrency_id])
-  #   @cryptocurrency.posts << @post
-
-  #   render json: @cryptocurrency, include: :posts
-  # end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

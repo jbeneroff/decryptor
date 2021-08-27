@@ -44,7 +44,8 @@ export default function PostCreate(props) {
         handleCreate(formData, selectedCryptocurrency)
       }}>
         <div className='create-div'>
-          <textarea id='create-input' type='text' name='content' value={content} onChange={handleChange} placeholder='What are your thoughts?' />
+          <textarea id='create-input' type='text' name='content' value={content} onChange={handleChange}
+            placeholder='What are your thoughts?' />
           <button id='post-button'>Post</button>
         </div>
       </form>

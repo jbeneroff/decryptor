@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Comment.destroy_all
 Post.destroy_all
 Cryptocurrency.destroy_all
 User.destroy_all
@@ -36,8 +37,10 @@ puts "#{User.count} users created"
 
 puts "#{Cryptocurrency.count} cryptos created"
 
-Post.create!(content: 'Bitcoin will be $100k end of year', user: @admin, cryptocurrency: @btc)
-Post.create!(content: 'Ethereum has the best tech by far', user: @admin, cryptocurrency: @eth)
-Post.create!(content: 'DOGE to the MOON!!!', user: @admin, cryptocurrency: @doge)
+@post1 = Post.create!(content: 'Bitcoin will be $100k end of year', user: @admin, cryptocurrency: @btc)
+@post2 = Post.create!(content: 'Ethereum has the best tech by far', user: @admin, cryptocurrency: @eth)
+@post3 = Post.create!(content: 'DOGE to the MOON!!!', user: @admin, cryptocurrency: @doge)
 
 puts "#{Post.count} posts created"
+
+Comment.create!(content: 'More like 10k...', user: @admin, post: @post1)
