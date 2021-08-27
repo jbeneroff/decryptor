@@ -17,6 +17,21 @@ export default function CryptocurrencyDetail(props) {
     fetchCryptocurrency()
   }, [id])
 
+  // const showComments = (post) => {
+  //   // e.preventDefault()
+  //   console.log('clicked')
+  //   comments.map((comment) => {
+  //     if (comment?.post_id === post?.id) {
+  //       return (
+  //         <div className='comment-div' key={comment.id}>
+  //           <p id='commenter'>{comment?.user.username}</p>
+  //           <p id='comment-content'>{comment?.content}</p>
+  //         </div>
+  //       )
+  //     }
+  //   })
+  // }
+
   return (
     <div>
       <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
@@ -46,12 +61,16 @@ export default function CryptocurrencyDetail(props) {
                   </div>
                 )}
                 <div>
+                  {/* <form onSubmit={showComments(post)}>
+                    <button type='submit' id='show-button' >Comments</button>
+                  </form> */}
+
                   {comments.map((comment) => {
                     if (comment?.post_id === post?.id) {
                       return (
                         <div className='comment-div' key={comment.id}>
-                          <p>{comment?.user.username}</p>
-                          <p>{comment?.content}</p>
+                          <p id='commenter'>{comment?.user.username}</p>
+                          <p id='comment-content'>{comment?.content}</p>
                         </div>
                       )
                     }

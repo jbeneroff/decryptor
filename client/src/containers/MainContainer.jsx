@@ -37,7 +37,6 @@ export default function MainContainer(props) {
     const fetchComments = async () => {
       const commentList = await getAllComments()
       setComments(commentList)
-      console.log(commentList)
     }
     fetchComments()
   }, [])
