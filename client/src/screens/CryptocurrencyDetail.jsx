@@ -30,9 +30,11 @@ export default function CryptocurrencyDetail(props) {
 
   return (
     <div>
-      <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
-      <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
-      <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>
+      <div className='detail-div'>
+        <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
+        <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
+        <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>
+      </div>
       {currentUser && (
         <div>
           <Link to='/posts/new'>
@@ -41,7 +43,7 @@ export default function CryptocurrencyDetail(props) {
         </div>
       )}
       <div>
-        {posts.map((post) => {
+        {posts.map((post, key) => {
           if (post?.cryptocurrency_id === cryptocurrency?.id) {
             return (
               <div className='post-div' key={post.id}>
@@ -50,7 +52,7 @@ export default function CryptocurrencyDetail(props) {
                 <p id='post-time'>{`Posted at ${post.created_at.slice(11, 16)} on ${post.created_at.slice(5, 10)}-${post.created_at.slice(0, 4)}`}</p>
                 {currentUser?.id === post.user_id && (
                   <div>
-                    <button id='delete-button' onClick={() => handleDelete(post.id)}>Delete</button>
+                    <button id='delete-button' onClick={() => handleDelete(post.id)}>X</button>
                     <Link to={`/posts/${post.id}/edit`}>
                       <button id='edit-button'>Edit</button>
                     </Link>
@@ -58,7 +60,7 @@ export default function CryptocurrencyDetail(props) {
                 )}
                 <button id='show-button' onClick={() => showComments(post)}>Comments</button>
                 {isCommentsShow === post.id && <div>
-                  {comments.map((comment) => {
+                  {comments.map((comment, key) => {
                     if (comment?.post_id === post?.id) {
                       return (
                         <div className='comment-div' key={comment.id}>
@@ -69,7 +71,7 @@ export default function CryptocurrencyDetail(props) {
                               <Link to={`/comments/${comment.id}/edit`}>
                                 <button id='edit-comment'>Edit</button>
                               </Link>
-                              <button id='delete-comment' onClick={() => handleDeleteComment(comment.id)}>Delete</button>
+                              <button id='delete-comment' onClick={() => handleDeleteComment(comment.id)}>X</button>
                             </div>
                           )}
                         </div>

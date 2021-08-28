@@ -8,7 +8,6 @@ import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
 // import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
-import CommentCreate from '../components/CommentCreate'
 import CommentEdit from '../screens/CommentEdit'
 
 export default function MainContainer(props) {

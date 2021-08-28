@@ -119,3 +119,18 @@
   color: #8BA1CE;
   float: left;
 }
+
+@media only screen and (min-width: 1440px) {
+  .detail-div {
+    margin: 40px 200px 10px 200px;
+  }
+  .post-div {
+    margin: 20px 300px;
+  }
+  #create-button {
+    width: 6%;
+  }
+  #edit-comment, #delete-comment, #edit-button, #delete-button {
+    width: 6%;
+  }
+}

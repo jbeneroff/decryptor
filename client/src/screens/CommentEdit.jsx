@@ -7,7 +7,7 @@ export default function CommentEdit(props) {
     content: ''
   })
 
-  const { posts, comments, handleUpdateComment } = props
+  const { comments, handleUpdateComment } = props
   const { id } = useParams()
 
   useEffect(() => {
