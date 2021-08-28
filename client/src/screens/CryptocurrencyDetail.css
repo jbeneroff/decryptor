@@ -1,41 +1,44 @@
 #crypto-detail-name {
   margin: 10px 5px 5px 5px;
   font-size: 28px;
-  color: #2C9AD5;
+  /* color: #2c9ad5; */
+  color: white;
 }
 
 #crypto-detail-symbol {
   margin: 5px;
   font-size: 22px;
-  color: #9FD8F1;
+  color: #9fd8f1;
 }
 
 #crypto-detail-description {
   margin: 5px 15px;
   font-size: 14px;
   font-weight: 400;
-  color: #8BA1CE;
+  /* color: #8ba1ce; */
+  color: #f9fafb;
 }
 
 #create-button {
   margin: 10px 5px 1px 5px;
   font-size: 24px;
-  background-color: #8BA1CE;
-  border: #8BA1CE 1px solid;
+  background-color: #8ba1ce;
+  border: #8ba1ce 1px solid;
   border-radius: 10px;
   width: 10%;
   color: white;
 }
 
-#edit-button, #delete-button {
-  margin: 5px 2px 1px 2px;
+#edit-button,
+#delete-button {
+  margin: 1px 2px 1px 2px;
   font-size: 8px;
   background-color: white;
-  border: #8BA1CE 1px solid;
-  padding: 4px 4px;
+  border: #8ba1ce 1px solid;
+  padding: 2px;
   border-radius: 6px;
-  width: 15%;
-  color: #8BA1CE;
+  width: 6%;
+  color: #8ba1ce;
   float: right;
 }
 
@@ -44,13 +47,15 @@
   flex-direction: column;
   padding: 15px;
   margin: 10px 40px;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
   border-radius: 10px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 #post-content {
-  color: #2C9AD5;
+  color: #2c9ad5;
+  color: rgb(62, 62, 62);
   margin: 5px;
   text-align: left;
   font-size: 12px;
@@ -58,7 +63,7 @@
 }
 
 #post-user {
-  color: #8BA1CE;
+  color: #8ba1ce;
   margin: 2px 2px 2px 5px;
   text-align: left;
   font-size: 10px;
@@ -75,16 +80,16 @@
   margin: 5px 5px 1px 5px;
   font-size: 8px;
   background-color: white;
-  border: #8BA1CE 1px solid;
+  border: #8ba1ce 1px solid;
   padding: 4px 8px;
-  border-radius: 10px;
+  border-radius: 6px;
   width: 20%;
-  color: #8BA1CE;
+  color: #8ba1ce;
 }
 
 .comment-div {
   border-radius: 5px;
-  background-color: #d2d2d254;
+  background-color: #d2d2d225;
   width: auto;
   padding: 5px;
   display: flex;
@@ -93,44 +98,77 @@
 }
 
 #commenter {
-  color: #8BA1CE;
+  color: #8ba1ce;
   font-size: 10px;
   text-align: left;
-  margin: 1px
+  margin: 1px;
 }
 
 #comment-content {
-  color: #2C9AD5;
+  color: rgb(62, 62, 62);
   font-size: 10px;
   text-align: left;
   margin: 1px;
   overflow-wrap: break-word;
 }
 
-#edit-comment, #delete-comment {
+#edit-comment,
+#delete-comment {
   margin: 2px 2px 2px 1px;
   font-size: 8px;
   background-color: white;
   border: white 1px solid;
   /* padding: 4px 4px; */
   border-radius: 4px;
-  width: 12%;
-  height: 14px;
-  color: #8BA1CE;
+  width: 6%;
+  /* height: 12px; */
+  color: #8ba1ce;
   float: left;
 }
 
 @media only screen and (min-width: 1440px) {
   .detail-div {
-    margin: 40px 200px 10px 200px;
+    margin: 40px 250px 10px 250px;
+  }
+  #crypto-detail-name {
+    font-size: 36px;
+  }
+  #crypto-detail-symbol {
+    font-size: 28px;
+    margin: 10px 5px 20px 5px;
+  }
+  #crypto-detail-description {
+    font-size: 16px;
   }
   .post-div {
-    margin: 20px 300px;
+    margin: 20px 400px;
   }
   #create-button {
     width: 6%;
+    font-size: 28px;
   }
-  #edit-comment, #delete-comment, #edit-button, #delete-button {
-    width: 6%;
+  #edit-button,
+  #delete-button {
+    width: 4%;
+    font-size: 12px;
+  }
+  #edit-comment,
+  #delete-comment {
+    width: 4%;
+    font-size: 10px;
+  }
+  #post-content,
+  #post-user {
+    font-size: large;
+  }
+  #comment-content,
+  #commenter {
+    font-size: 14px;
+  }
+  .comment-div {
+    padding: 10px;
+  }
+  .post-div {
+    padding: 25px;
   }
 }

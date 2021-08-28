@@ -54,7 +54,7 @@ export default function CryptocurrencyDetail(props) {
                   <div>
                     <button id='delete-button' onClick={() => handleDelete(post.id)}>X</button>
                     <Link to={`/posts/${post.id}/edit`}>
-                      <button id='edit-button'>Edit</button>
+                      <button id='edit-button'>✎</button>
                     </Link>
                   </div>
                 )}
@@ -69,7 +69,7 @@ export default function CryptocurrencyDetail(props) {
                           {currentUser?.id === comment.user_id && (
                             <div>
                               <Link to={`/comments/${comment.id}/edit`}>
-                                <button id='edit-comment'>Edit</button>
+                                <button id='edit-comment'>✎</button>
                               </Link>
                               <button id='delete-comment' onClick={() => handleDeleteComment(comment.id)}>X</button>
                             </div>

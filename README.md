@@ -1,6 +1,6 @@
 # DeCryptor
 
-[DeCryptor Wesbite](https://decryptor.netlify.app/)
+[DeCryptor Website](https://decryptor.netlify.app/)
 
 - [Overview](#overview)
 - [MVP](#mvp)

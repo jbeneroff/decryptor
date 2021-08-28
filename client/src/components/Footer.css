@@ -1,8 +1,10 @@
 .footer {
-  background-image: linear-gradient(to right, #ebebeb , #c0cad7);
+  /* background-image: linear-gradient(to right, #ebebeb , #c0cad7); */
+  background-color: #2c9ad5;
 }
 
 #footer-text {
   margin: 2px;
-  color: #8BA1CE;
+  color: white;
+  font-size: 10px;
 }
