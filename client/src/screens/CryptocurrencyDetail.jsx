@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import CommentCreate from '../components/CommentCreate'
 import PostCreate from './PostCreate'
 import { getOneCryptocurrency } from '../services/cryptocurrencies'
+import Loader from '../components/Loader'
 import './CryptocurrencyDetail.css'
 
 export default function CryptocurrencyDetail(props) {
@@ -28,10 +29,14 @@ export default function CryptocurrencyDetail(props) {
     }
   }
 
+  if (posts.length === 0) {
+    return <Loader />
+  }
+
 
   return (
     <div className ='page'>
-      {/* <div className='crypto-list-dp'>
+      <div className='crypto-list-dp'>
         {cryptocurrencies.map((cryptocurrency) => (
           <div className='crypto-card-dp' key={cryptocurrency.id}>
             <Link className='crypto-link-dp' to={`/cryptocurrencies/${cryptocurrency.id}`}>
@@ -39,7 +44,8 @@ export default function CryptocurrencyDetail(props) {
             </Link>
           </div>
         ))}
-      </div> */}
+      </div>
+      <hr />
     <div>
       <div className='detail-div'>
         <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>

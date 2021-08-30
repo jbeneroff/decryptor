@@ -1,31 +1,32 @@
 /* .page {
   display: flex;
-  flex-direction: row;
-}
+  flex-direction: column;
+} */
 
 .crypto-list-dp {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: 20px 10px 10px 20px;
+  display: none;
 }
 
-.crypto-card-dp {
+/* .crypto-card-dp {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.crypto-link-dp {
+/* .crypto-link-dp {
   text-decoration: none;
 }
 
 .crypto-name-dp {
-  margin: 10px;
   color: #2c9ad5;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+hr {
+  display: none;
+  width: 95%;
 } */
 
 #crypto-detail-name {
@@ -171,12 +172,53 @@
   } */
 }
 
+@media only screen and (max-width: 768px) {
+  hr {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .detail-div {
     margin: 40px 80px 10px 80px;
   }
   .post-div {
     margin: 20px 120px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+  .crypto-list-dp {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    margin: 20px 10px 10px 20px;
+  }
+  .crypto-card-dp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+      0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  .crypto-link-dp {
+    text-decoration: none;
+  }
+  .crypto-name-dp {
+    color: #2c9ad5;
+    font-size: 14px;
+    padding: 0px 2px;
+    margin: 2px;
+  }
+  hr {
+    width: 95%;
   }
 }
 
@@ -224,5 +266,8 @@
   }
   .post-div {
     padding: 25px;
+  }
+  .crypto-name-dp {
+    font-size: 16px;
   }
 }

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './Cryptocurrencies.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import Loader from '../components/Loader'
 
 export default function Cryptocurrencies(props) {
   const [cryptoPrices, setCryptoPrices] = useState([])
@@ -16,6 +17,10 @@ export default function Cryptocurrencies(props) {
   //   fetchCryptoPrices()
   //   // console.log(cryptos)
   // }, [])
+
+  if (cryptocurrencies.length === 0) {
+    return <Loader />
+  }
 
   return (
     <div>
