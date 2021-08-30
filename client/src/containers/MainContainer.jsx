@@ -113,7 +113,8 @@ export default function MainContainer(props) {
             comments={comments}
             currentUser={currentUser}
             handleDelete={handleDelete}
-            handleDeleteComment={handleDeleteComment} />
+            handleDeleteComment={handleDeleteComment}
+            cryptocurrencies={cryptocurrencies}/>
         </Route>
         <Route path='/'>
           <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />

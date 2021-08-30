@@ -30,6 +30,16 @@ export default function CryptocurrencyDetail(props) {
 
 
   return (
+    <div className ='page'>
+      {/* <div className='crypto-list-dp'>
+        {cryptocurrencies.map((cryptocurrency) => (
+          <div className='crypto-card-dp' key={cryptocurrency.id}>
+            <Link className='crypto-link-dp' to={`/cryptocurrencies/${cryptocurrency.id}`}>
+              <p className='crypto-name-dp'>{cryptocurrency.name}</p>
+            </Link>
+          </div>
+        ))}
+      </div> */}
     <div>
       <div className='detail-div'>
         <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
@@ -45,7 +55,7 @@ export default function CryptocurrencyDetail(props) {
         </div>
       )}
       <div>
-        {posts.map((post, key) => {
+        {posts.slice(0).reverse().map((post, key) => {
           if (post?.cryptocurrency_id === cryptocurrency?.id) {
             return (
               <div className='post-div' key={post.id}>
@@ -91,6 +101,7 @@ export default function CryptocurrencyDetail(props) {
           }
         })}
       </div>
+    </div>
     </div>
   )
 }

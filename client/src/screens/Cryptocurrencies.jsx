@@ -9,18 +9,17 @@ export default function Cryptocurrencies(props) {
 
   // useEffect(() => {
   //   const fetchCryptos = async () => {
-  //     const resp = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd`)
-  //     // console.log(resp.data)
-  //     // console.log(resp.data.bitcoin)
-  //     // console.log(resp.data.market_data.current_price.usd)
+  //     const resp = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Cbinancecoin%2Ctether%2Cdogecoin%2Cxrp%2Clitecoin%2Cpolygon%2Cpancakeswap%20&vs_currencies=usd')
+  //     console.log(resp.data)
   //     setCryptos(resp.data)
-  //     console.log(cryptos)
   //   }
   //   fetchCryptos()
+  //   console.log(cryptos)
   // }, [])
 
   return (
     <div>
+      {/* <h1>{cryptos}</h1> */}
       <h1 id='list-title'>Cryptocurrencies</h1>
       <div className='crypto-list'>
         {cryptocurrencies.map((cryptocurrency) => (
@@ -28,7 +27,7 @@ export default function Cryptocurrencies(props) {
             <Link className='crypto-link' to={`/cryptocurrencies/${cryptocurrency.id}`}>
               <p className='crypto-name'>{cryptocurrency.name}</p>
               <p className='crypto-symbol'>{cryptocurrency.symbol}</p>
-              {/* <p>{cryptos.bitcoin.usd}</p> */}
+              {/* <p>{cryptos</p> */}
             </Link>
           </div>
         ))}
