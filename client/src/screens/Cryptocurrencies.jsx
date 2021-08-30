@@ -9,7 +9,7 @@ export default function Cryptocurrencies(props) {
     return <Loader />
   }
 
-  let bnbPrice = prices.binancecoin.usd
+  // let bnbPrice = prices.binancecoin.usd
   // let btcPrice = prices.bitcoin.usd
   // let adaPrice = prices.cardano.usd
   // let dogePrice = prices.dogecoin.usd
@@ -23,7 +23,7 @@ export default function Cryptocurrencies(props) {
   return (
     <div>
       <div>
-        <p>{bnbPrice}</p>
+        {/* <p>{bnbPrice}</p> */}
       </div>
       <h1 id='list-title'>Cryptocurrencies</h1>
       <div className='crypto-list'>

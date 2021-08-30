@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
+import Logo from '../assets/logo-blue.png'
 
 export default function Header(props) {
 
@@ -8,7 +9,10 @@ export default function Header(props) {
 
   return (
     <div className='header'>
-      <Link to='/' id='title-link'><h1 id='title'>DeCryptor</h1></Link>
+      <div className='logo-header'>
+        <img id='logo' src={Logo} alt="" />
+        <Link to='/' id='title-link'><h1 id='title'>DeCryptor</h1></Link>
+      </div>
       {currentUser ? (
         <div className='user-nav'>
           <Link className='nav-item' id='username' to='/posts'>{`Hello, ${currentUser.username}`}</Link>
