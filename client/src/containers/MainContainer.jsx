@@ -51,7 +51,9 @@ export default function MainContainer(props) {
   const handleCreateComment = async (formData, post) => {
     const commentData = await postComment(formData, post)
     setComments((prevState) => [...prevState, commentData])
-    history.goBack()
+    // history.goBack()
+    // history.go(0)
+    history.push(`/cryptocurrencies/${commentData.post.cryptocurrency_id}`)
   }
 
 

@@ -3,7 +3,6 @@ import './CommentCreate.css'
 
 export default function CommentCreate(props) {
 
-  // const [post, setPost] = useState(post)
   const { post } = props
 
   const [formData, setFormData] = useState({
@@ -14,7 +13,6 @@ export default function CommentCreate(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    // setPost(post)
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -26,6 +24,7 @@ export default function CommentCreate(props) {
       <form id='input-form' onSubmit={(e) => {
         e.preventDefault()
         handleCreateComment(formData, post.id)
+        setFormData({content: ''})
       }}>
         <div className='create-comment-div'>
           <textarea id='create-comment-input' type='text' name='content' value={content} onChange={handleChange}
