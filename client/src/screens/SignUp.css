@@ -49,6 +49,11 @@
   color: #2c9ad5;
   font-weight: 500;
 }
+@media only screen and (min-width: 768px) {
+  .signup-form {
+    margin: 80px 200px 80px 200px;
+  }
+}
 
 @media only screen and (min-width: 1440px) {
   .signup-form {

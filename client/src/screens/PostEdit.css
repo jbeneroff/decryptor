@@ -32,6 +32,12 @@
   color: white;
 }
 
+@media only screen and (min-width: 768px) {
+  #edit-input {
+    width: 60%;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   #edit-header {
     margin-top: 60px;

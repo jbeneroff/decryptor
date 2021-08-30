@@ -126,6 +126,15 @@
   float: left;
 }
 
+@media only screen and (min-width: 768px) {
+  .detail-div {
+    margin: 40px 80px 10px 80px;
+  }
+  .post-div {
+    margin: 20px 120px;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .detail-div {
     margin: 40px 250px 10px 250px;
