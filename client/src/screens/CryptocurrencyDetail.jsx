@@ -88,6 +88,8 @@ export default function CryptocurrencyDetail(props) {
                           )}
                         </div>
                       )
+                    } else {
+                      return false
                     }
                   })}
                   {currentUser && (
@@ -98,6 +100,8 @@ export default function CryptocurrencyDetail(props) {
                 </div>}
               </div>
             )
+          } else {
+            return false
           }
         })}
       </div>
