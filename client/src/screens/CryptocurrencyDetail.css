@@ -1,32 +1,6 @@
-/* .page {
-  display: flex;
-  flex-direction: row;
-}
-
 .crypto-list-dp {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: 20px 10px 10px 20px;
+  display: none;
 }
-
-.crypto-card-dp {
-  padding: 10px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
-
-.crypto-link-dp {
-  text-decoration: none;
-}
-
-.crypto-name-dp {
-  margin: 10px;
-  color: #2c9ad5;
-  font-size: 20px;
-} */
 
 #crypto-detail-name {
   margin: 10px 5px 5px 5px;
@@ -40,22 +14,45 @@
   color: #9fd8f1;
 }
 
+#show-description {
+  font-size: 18px;
+  padding: 4px 8px;
+  border: white 1px solid;
+  border-radius: 6px;
+  color: white;
+  /* border: none; */
+  background: none;
+}
+
+#show-description:hover {
+  color: #9fd8f1;
+  background-color: #f9fafb;
+}
+
 #crypto-detail-description {
   margin: 5px 15px;
   font-size: 14px;
   font-weight: 400;
-  /* color: #8ba1ce; */
   color: #f9fafb;
 }
 
 #create-button {
-  margin: 10px 5px 1px 5px;
+  margin: 5px 5px 1px 5px;
   font-size: 24px;
-  background-color: #8ba1ce;
+  background-color: white;
   border: #8ba1ce 1px solid;
   border-radius: 10px;
   width: 10%;
   color: white;
+  color: #8ba1ce;
+  text-align: center;
+  padding: 1px;
+  transition: all 0.2s;
+}
+
+#create-button:hover {
+  background-color: #b4c4d9;
+  color: #2c9ad5;
 }
 
 #edit-button,
@@ -69,6 +66,7 @@
   width: 6%;
   color: #8ba1ce;
   float: right;
+  transition: all 0.2s;
 }
 
 .post-div {
@@ -83,7 +81,6 @@
 }
 
 #post-content {
-  color: #2c9ad5;
   color: rgb(62, 62, 62);
   margin: 5px;
   text-align: left;
@@ -114,6 +111,7 @@
   border-radius: 6px;
   width: 20%;
   color: #8ba1ce;
+  transition: all 0.2s;
 }
 
 .comment-div {
@@ -147,12 +145,20 @@
   font-size: 8px;
   background-color: white;
   border: white 1px solid;
-  /* padding: 4px 4px; */
   border-radius: 4px;
   width: 6%;
-  /* height: 12px; */
   color: #8ba1ce;
   float: left;
+  transition: all 0.2s;
+}
+
+#edit-button:hover,
+#delete-button:hover,
+#edit-comment:hover,
+#delete-comment:hover,
+#show-button:hover {
+  background-color: #e1e1e1;
+  color: #2c9ad5;
 }
 
 @media only screen and (max-width: 400px) {
@@ -162,7 +168,16 @@
   #delete-comment,
   #show-button {
     font-size: 6px;
-    padding: 2px;
+    padding: 1px;
+  }
+  #create-button {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  hr {
+    display: none;
   }
 }
 
@@ -175,6 +190,48 @@
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+  .crypto-list-dp {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    margin: 20px 10px 10px 20px;
+  }
+  .crypto-card-dp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+      0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  .crypto-card-dp:hover {
+    transform: scale(1.05);
+  }
+  .crypto-link-dp {
+    text-decoration: none;
+  }
+  .crypto-name-dp {
+    color: #2c9ad5;
+    font-size: 14px;
+    padding: 0px 2px;
+    margin: 2px;
+  }
+  hr {
+    width: 95%;
+  }
+  .post-div {
+    margin: 20px 200px 20px 200px;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .detail-div {
     margin: 40px 250px 10px 250px;
@@ -184,7 +241,7 @@
   }
   #crypto-detail-symbol {
     font-size: 28px;
-    margin: 10px 5px 20px 5px;
+    margin: 10px 5px 10px 5px;
   }
   #crypto-detail-description {
     font-size: 16px;
@@ -219,5 +276,8 @@
   }
   .post-div {
     padding: 25px;
+  }
+  .crypto-name-dp {
+    font-size: 16px;
   }
 }

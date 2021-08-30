@@ -1,10 +1,8 @@
 .header {
-  /* background-image: linear-gradient(to right, #ebebeb, #c0cad7); */
   background-color: #2c9ad5;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border-bottom: 1px solid white; */
 }
 
 #title-link {
@@ -17,7 +15,6 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  /* color: #8ba1ce; */
   color: white;
 }
 
@@ -29,24 +26,41 @@
   margin-right: 2px;
 }
 
-#cryptos,
+/* #cryptos,
 #username,
 #logout,
 #new-post,
 #login,
 #sign-up {
-  margin: 6px 5px;
-  /* text-align: center; */
-  padding: 1px;
+  margin: 0px 5px;
+  padding: 4px;
   text-decoration: none;
   font-size: 14px;
-  line-height: 5px;
-  /* border-radius: 4px; */
+  line-height: 10px;
   border: none;
   background: none;
   color: white;
   letter-spacing: 1px;
   text-align: right;
+} */
+
+.nav-item,
+#username {
+  margin: 0px 5px;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 10px;
+  border: none;
+  background: none;
+  color: white;
+  letter-spacing: 1px;
+  text-align: right;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  color: #9fd8f1;
 }
 
 @media only screen and (max-width: 400px) {
@@ -57,6 +71,14 @@
   #title {
     font-size: 24px;
     padding: 12px;
+  }
+  #cryptos,
+  #username,
+  #logout,
+  #new-post,
+  #login,
+  #sign-up {
+    font-size: 11px;
   }
 }
 
@@ -70,15 +92,14 @@
     flex-direction: row;
     margin: 20px 10px;
   }
-  #cryptos,
-  #username,
-  #logout,
-  #new-post,
-  #login,
-  #sign-up {
+  .nav-item,
+  #username {
     font-size: 16px;
     margin: 6px 8px;
     color: #2c9ad5;
+  }
+  .nav-item:hover {
+    color: #9fd8f1;
   }
   .header {
     background-color: white;

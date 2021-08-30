@@ -30,6 +30,12 @@
   border-radius: 10px;
   width: 20%;
   color: white;
+  transition: all 0.2s;
+}
+
+#submit-comment-edit:hover {
+  background-color: white;
+  color: #2c9ad5;
 }
 
 @media only screen and (max-width: 400px) {
