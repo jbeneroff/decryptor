@@ -27,6 +27,12 @@
   border-radius: 6px;
   width: 20%;
   color: white;
+  transition: all 0.2s;
+}
+
+#post-comment-button:hover {
+  background-color: white;
+  color: #2c9ad5;
 }
 
 @media only screen and (max-width: 400px) {

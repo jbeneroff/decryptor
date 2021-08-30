@@ -46,6 +46,12 @@
   border-radius: 10px;
   width: 20%;
   color: white;
+  transition: all 0.2s;
+}
+
+#post-button:hover {
+  background-color: white;
+  color: #2c9ad5;
 }
 
 @media only screen and (min-width: 768px) {

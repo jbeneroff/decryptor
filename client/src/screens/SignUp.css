@@ -37,6 +37,13 @@
   border-radius: 10px;
   width: 30%;
   color: white;
+  transition: all 0.2s;
+}
+
+#login-button:hover,
+#register-button:hover {
+  background-color: white;
+  color: #8ba1ce;
 }
 
 ::placeholder {

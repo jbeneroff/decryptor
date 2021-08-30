@@ -41,6 +41,13 @@
   border-radius: 10px;
   width: 30%;
   color: white;
+  transition: all 0.2s;
+}
+
+#signin-button:hover,
+#signup-button:hover {
+  background-color: white;
+  color: #8ba1ce;
 }
 
 #no-account-header {
