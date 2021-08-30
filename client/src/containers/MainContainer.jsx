@@ -51,8 +51,6 @@ export default function MainContainer(props) {
   const handleCreateComment = async (formData, post) => {
     const commentData = await postComment(formData, post)
     setComments((prevState) => [...prevState, commentData])
-    // history.goBack()
-    // history.go(0)
     history.push(`/cryptocurrencies/${commentData.post.cryptocurrency_id}`)
   }
 
@@ -107,7 +105,15 @@ export default function MainContainer(props) {
           <Posts posts={posts} />
         </Route> */}
         <Route path='/cryptocurrencies/:id'>
-          <CryptocurrencyDetail handleCreateComment={handleCreateComment} posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} handleDeleteComment={handleDeleteComment} />
+          <CryptocurrencyDetail
+            // cryptocurrencies={cryptocurrencies}
+            // handleCreate={handleCreate}
+            handleCreateComment={handleCreateComment}
+            posts={posts}
+            comments={comments}
+            currentUser={currentUser}
+            handleDelete={handleDelete}
+            handleDeleteComment={handleDeleteComment} />
         </Route>
         <Route path='/'>
           <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />

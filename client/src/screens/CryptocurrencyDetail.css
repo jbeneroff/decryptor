@@ -126,6 +126,17 @@
   float: left;
 }
 
+@media only screen and (max-width: 400px) {
+  #edit-button,
+  #delete-button,
+  #edit-comment,
+  #delete-comment,
+  #show-button {
+    font-size: 6px;
+    padding: 2px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .detail-div {
     margin: 40px 80px 10px 80px;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import CommentCreate from '../components/CommentCreate'
+import PostCreate from './PostCreate'
 import { getOneCryptocurrency } from '../services/cryptocurrencies'
 import './CryptocurrencyDetail.css'
 
@@ -9,7 +10,7 @@ export default function CryptocurrencyDetail(props) {
   const [cryptocurrency, setCryptocurrency] = useState(null)
   const [isCommentsShow, setIsCommentsShow] = useState(false)
   const { id } = useParams()
-  const { posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
+  const { cryptocurrencies, handleCreate, posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
 
   useEffect(() => {
     const fetchCryptocurrency = async () => {
@@ -40,6 +41,7 @@ export default function CryptocurrencyDetail(props) {
           <Link to='/posts/new'>
             <button id='create-button'>+</button>
           </Link>
+          {/* <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate}/> */}
         </div>
       )}
       <div>
