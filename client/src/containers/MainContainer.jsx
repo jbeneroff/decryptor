@@ -5,7 +5,7 @@ import { getAllPosts, postPost, putPost, deletePost } from '../services/posts'
 import { getAllComments, postComment, putComment, deleteComment } from '../services/comments'
 import Cryptocurrencies from '../screens/Cryptocurrencies'
 import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
-// import Posts from '../screens/Posts'
+import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
 import CommentEdit from '../screens/CommentEdit'
@@ -92,18 +92,15 @@ export default function MainContainer(props) {
         <Route path='/comments/:id/edit'>
           <CommentEdit posts={posts} currentUser={currentUser} handleUpdateComment={handleUpdateComment} comments={comments} />
         </Route>
-        {/* <Route path='/comments/new'>
-          <CommentCreate posts={posts} handleCreateComment={handleCreateComment} />
-        </Route> */}
         <Route path='/posts/:id/edit'>
           <PostEdit posts={posts} handleUpdate={handleUpdate} cryptocurrencies={cryptocurrencies} />
         </Route>
         <Route path='/posts/new'>
           <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate} />
         </Route>
-        {/* <Route path='/posts'>
-          <Posts posts={posts} />
-        </Route> */}
+        <Route path='/posts'>
+          <Posts posts={posts} comments={comments} currentUser={currentUser}/>
+        </Route>
         <Route path='/cryptocurrencies/:id'>
           <CryptocurrencyDetail
             // cryptocurrencies={cryptocurrencies}

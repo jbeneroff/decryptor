@@ -11,7 +11,7 @@ export default function Header(props) {
       <Link to='/' id='title-link'><h1 id='title'>DeCryptor</h1></Link>
       {currentUser ? (
         <div className='user-nav'>
-          <p id='username'>{`Hello, ${currentUser.username}`}</p>
+          <Link className='nav-item' id='username' to='/posts'>{`Hello, ${currentUser.username}`}</Link>
           <Link className='nav-item' id='cryptos' to='/'>Cryptocurrencies</Link>
           <Link  className='nav-item' id='new-post' to='/posts/new'>Create Post</Link>
           <button className='nav-item' id='logout' onClick={handleLogout}>Sign Out</button>
