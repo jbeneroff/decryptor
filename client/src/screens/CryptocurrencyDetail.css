@@ -17,7 +17,7 @@
 #crypto-detail-price {
   margin: 10px;
   font-size: 20px;
-  color: #9fd8f1;
+  color: black;
 }
 
 #show-description {
@@ -248,6 +248,9 @@
   #crypto-detail-symbol {
     font-size: 28px;
     margin: 10px 5px 10px 5px;
+  }
+  #crypto-detail-price {
+    font-size: 24px;
   }
   #crypto-detail-description {
     font-size: 16px;
