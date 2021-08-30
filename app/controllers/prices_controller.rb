@@ -7,3 +7,5 @@ class PricesController < ApplicationController
     render json: response
   end
 end
+
+# https://www.coingecko.com/en/api/documentation

@@ -14,7 +14,6 @@ import CommentEdit from '../screens/CommentEdit'
 export default function MainContainer(props) {
 
   const [cryptocurrencies, setCryptocurrencies] = useState([])
-  // const [prices, setPrices] = useState([])
   const [posts, setPosts] = useState([])
   const [comments, setComments] = useState([])
   const { currentUser } = props
@@ -31,8 +30,6 @@ export default function MainContainer(props) {
   
   const fetchPrices = useCallback( async () => {
     const priceList = await getAllPrices()
-    // setPrices(priceList)
-    // console.log(priceList)
     setCryptocurrencies(prevState => prevState.map((currency) => {
       return {...currency, price: priceList[currency.api_id]?.usd}
     }
