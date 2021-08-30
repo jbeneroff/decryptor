@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { getAllCryptocurrencies } from '../services/cryptocurrencies'
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts'
@@ -14,7 +14,7 @@ import CommentEdit from '../screens/CommentEdit'
 export default function MainContainer(props) {
 
   const [cryptocurrencies, setCryptocurrencies] = useState([])
-  const [prices, setPrices] = useState([])
+  // const [prices, setPrices] = useState([])
   const [posts, setPosts] = useState([])
   const [comments, setComments] = useState([])
   const { currentUser } = props
@@ -28,14 +28,22 @@ export default function MainContainer(props) {
     fetchCryptocurrencies()
   }, [])
 
-  useEffect(() => {
-    const fetchPrices = async () => {
-      const priceList = await getAllPrices()
-      setPrices(priceList)
-      console.log(priceList)
+  
+  const fetchPrices = useCallback( async () => {
+    const priceList = await getAllPrices()
+    // setPrices(priceList)
+    // console.log(priceList)
+    setCryptocurrencies(prevState => prevState.map((currency) => {
+      return {...currency, price: priceList[currency.api_id]?.usd}
     }
-    fetchPrices()
-  }, [])
+    )) 
+  }, [cryptocurrencies])
+
+  useEffect(() => {
+    if (cryptocurrencies.length) {
+      fetchPrices()
+    }
+  }, [cryptocurrencies.length])
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -122,10 +130,10 @@ export default function MainContainer(props) {
             currentUser={currentUser}
             handleDelete={handleDelete}
             handleDeleteComment={handleDeleteComment}
-            cryptocurrencies={cryptocurrencies}/>
+            cryptocurrencies={cryptocurrencies} />
         </Route>
         <Route path='/'>
-          <Cryptocurrencies cryptocurrencies={cryptocurrencies} prices={prices} currentUser={currentUser} s />
+          <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} />
         </Route>
       </Switch>
     </div>
