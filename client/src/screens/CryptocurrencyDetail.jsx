@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import CommentCreate from '../components/CommentCreate'
-import { getOneCryptocurrency } from '../services/cryptocurrencies'
+// import { getOneCryptocurrency } from '../services/cryptocurrencies'
 import Loader from '../components/Loader'
 import './CryptocurrencyDetail.css'
 
@@ -15,11 +15,14 @@ export default function CryptocurrencyDetail(props) {
 
   useEffect(() => {
     const fetchCryptocurrency = async () => {
-      const cryptocurrencyData = await getOneCryptocurrency(id)
+      // const cryptocurrencyData = await getOneCryptocurrency(id)
+      const cryptocurrencyData = cryptocurrencies.find(currency => currency.id === Number(id))
       setCryptocurrency(cryptocurrencyData)
     }
-    fetchCryptocurrency()
-  }, [id])
+    if (cryptocurrencies.length) {
+      fetchCryptocurrency()
+    }
+  }, [id, cryptocurrencies])
 
   const showComments = (post) => {
     if (isCommentsShow === post.id) {
@@ -56,7 +59,8 @@ export default function CryptocurrencyDetail(props) {
     <div>
       <div className='detail-div'>
         <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
-        <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
+          <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
+          <p id='crypto-detail-price' >${cryptocurrency?.price}</p>
         <button id='show-description' onClick={() => showDescription(cryptocurrency)}>What is {cryptocurrency?.name}?</button>
         {isDescriptionShow === cryptocurrency?.id &&
           <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>}

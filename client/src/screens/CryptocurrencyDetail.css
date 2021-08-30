@@ -14,6 +14,12 @@
   color: #9fd8f1;
 }
 
+#crypto-detail-price {
+  margin: 10px;
+  font-size: 20px;
+  color: #9fd8f1;
+}
+
 #show-description {
   font-size: 18px;
   padding: 4px 8px;

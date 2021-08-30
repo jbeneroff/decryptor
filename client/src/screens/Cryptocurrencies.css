@@ -34,15 +34,19 @@
 
 .crypto-name {
   margin: 10px;
-  /* color: white; */
   color: #2c9ad5;
   font-size: 20px;
 }
 
 .crypto-symbol {
   margin: 10px;
-  /* color: white; */
   color: #9fd8f1;
+  font-size: 18px;
+}
+
+.crypto-price {
+  margin: 10px;
+  color: #8ba1ce;
   font-size: 18px;
 }
 
