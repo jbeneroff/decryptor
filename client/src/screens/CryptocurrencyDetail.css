@@ -17,9 +17,10 @@
 #show-description {
   font-size: 18px;
   padding: 4px 8px;
+  border: white 1px solid;
   border-radius: 6px;
   color: white;
-  border: none;
+  /* border: none; */
   background: none;
 }
 

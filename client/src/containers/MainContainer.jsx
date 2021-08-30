@@ -99,7 +99,7 @@ export default function MainContainer(props) {
           <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate} />
         </Route>
         <Route path='/posts'>
-          <Posts posts={posts} comments={comments} currentUser={currentUser}/>
+          <Posts posts={posts} comments={comments} handleDelete={handleDelete} currentUser={currentUser}/>
         </Route>
         <Route path='/cryptocurrencies/:id'>
           <CryptocurrencyDetail

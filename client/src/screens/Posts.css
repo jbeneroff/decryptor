@@ -40,9 +40,28 @@
 
 #comments-header {
   color: rgb(62, 62, 62);
-  margin: 5px;
+  margin: 5px 10px 5px 10px;
   text-align: left;
   font-size: 12px;
+}
+
+#delete-my-post {
+  margin: 1px 2px 1px 2px;
+  font-size: 8px;
+  background-color: white;
+  border: #8ba1ce 1px solid;
+  padding: 2px;
+  border-radius: 6px;
+  width: 6%;
+  color: #8ba1ce;
+  float: right;
+  transition: all 0.2s;
+}
+
+@media only screen and (max-width: 768px) {
+  #comments-header {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
