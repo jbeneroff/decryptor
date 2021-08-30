@@ -32,6 +32,13 @@
   color: white;
 }
 
+@media only screen and (max-width: 400px) {
+  #submit-edit {
+    font-size: 12px;
+    padding: 4px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #edit-input {
     width: 60%;

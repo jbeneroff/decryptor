@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import CommentCreate from '../components/CommentCreate'
+import PostCreate from './PostCreate'
 import { getOneCryptocurrency } from '../services/cryptocurrencies'
 import './CryptocurrencyDetail.css'
 
@@ -9,7 +10,7 @@ export default function CryptocurrencyDetail(props) {
   const [cryptocurrency, setCryptocurrency] = useState(null)
   const [isCommentsShow, setIsCommentsShow] = useState(false)
   const { id } = useParams()
-  const { posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
+  const { cryptocurrencies, handleCreate, posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
 
   useEffect(() => {
     const fetchCryptocurrency = async () => {
@@ -29,6 +30,16 @@ export default function CryptocurrencyDetail(props) {
 
 
   return (
+    <div className ='page'>
+      {/* <div className='crypto-list-dp'>
+        {cryptocurrencies.map((cryptocurrency) => (
+          <div className='crypto-card-dp' key={cryptocurrency.id}>
+            <Link className='crypto-link-dp' to={`/cryptocurrencies/${cryptocurrency.id}`}>
+              <p className='crypto-name-dp'>{cryptocurrency.name}</p>
+            </Link>
+          </div>
+        ))}
+      </div> */}
     <div>
       <div className='detail-div'>
         <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
@@ -40,10 +51,11 @@ export default function CryptocurrencyDetail(props) {
           <Link to='/posts/new'>
             <button id='create-button'>+</button>
           </Link>
+          {/* <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate}/> */}
         </div>
       )}
       <div>
-        {posts.map((post, key) => {
+        {posts.slice(0).reverse().map((post, key) => {
           if (post?.cryptocurrency_id === cryptocurrency?.id) {
             return (
               <div className='post-div' key={post.id}>
@@ -89,6 +101,7 @@ export default function CryptocurrencyDetail(props) {
           }
         })}
       </div>
+    </div>
     </div>
   )
 }
