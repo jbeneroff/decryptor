@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import CommentCreate from '../components/CommentCreate'
-// import PostCreate from './PostCreate'
 import { getOneCryptocurrency } from '../services/cryptocurrencies'
 import Loader from '../components/Loader'
 import './CryptocurrencyDetail.css'
@@ -9,7 +8,6 @@ import './CryptocurrencyDetail.css'
 export default function CryptocurrencyDetail(props) {
 
   const [cryptocurrency, setCryptocurrency] = useState(null)
-  // const [isCreatePostShow, setIsCreatePostShow] = useState(false)
   const [isDescriptionShow, setIsDescriptionShow] = useState(false)
   const [isCommentsShow, setIsCommentsShow] = useState(false)
   const { id } = useParams()
@@ -38,14 +36,6 @@ export default function CryptocurrencyDetail(props) {
       setIsDescriptionShow(cryptocurrency.id)
     }
   }
-
-  // const showCreatePost = (post) => {
-  //   if (isCreatePostShow === post.id) {
-  //     setIsCreatePostShow(false)
-  //   } else {
-  //     setIsCreatePostShow(post.id)
-  //   }
-  // }
 
   if (posts.length === 0) {
     return <Loader />

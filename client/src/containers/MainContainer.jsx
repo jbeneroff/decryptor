@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom'
 import { getAllCryptocurrencies } from '../services/cryptocurrencies'
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts'
 import { getAllComments, postComment, putComment, deleteComment } from '../services/comments'
+import { getAllPrices } from '../services/prices'
 import Cryptocurrencies from '../screens/Cryptocurrencies'
 import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
 import Posts from '../screens/Posts'
@@ -13,6 +14,7 @@ import CommentEdit from '../screens/CommentEdit'
 export default function MainContainer(props) {
 
   const [cryptocurrencies, setCryptocurrencies] = useState([])
+  const [prices, setPrices] = useState([])
   const [posts, setPosts] = useState([])
   const [comments, setComments] = useState([])
   const { currentUser } = props
@@ -24,6 +26,15 @@ export default function MainContainer(props) {
       setCryptocurrencies(cryptocurrencyList)
     }
     fetchCryptocurrencies()
+  }, [])
+
+  useEffect(() => {
+    const fetchPrices = async () => {
+      const priceList = await getAllPrices()
+      setPrices(priceList)
+      console.log(priceList)
+    }
+    fetchPrices()
   }, [])
 
   useEffect(() => {
@@ -114,7 +125,7 @@ export default function MainContainer(props) {
             cryptocurrencies={cryptocurrencies}/>
         </Route>
         <Route path='/'>
-          <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />
+          <Cryptocurrencies cryptocurrencies={cryptocurrencies} prices={prices} currentUser={currentUser} s />
         </Route>
       </Switch>
     </div>

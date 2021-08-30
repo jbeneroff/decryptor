@@ -1,36 +1,30 @@
 import { Link } from 'react-router-dom'
-import './Cryptocurrencies.css'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
 import Loader from '../components/Loader'
+import './Cryptocurrencies.css'
 
 export default function Cryptocurrencies(props) {
-  const [cryptoPrices, setCryptoPrices] = useState([])
-  const { cryptocurrencies } = props
-
-  // useEffect(() => {
-  //   const fetchCryptoPrices = async () => {
-  //     const resp = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Cbinancecoin%2Ctether%2Cdogecoin%2Cxrp%2Clitecoin%2Cpolygon%2Cpancakeswap%20&vs_currencies=usd')
-  //     console.log(resp.data)
-  //     setCryptoPrices(resp.data)
-  //   }
-  //   fetchCryptoPrices()
-  //   // console.log(cryptos)
-  // }, [])
+  const { cryptocurrencies, prices } = props
 
   if (cryptocurrencies.length === 0) {
     return <Loader />
   }
 
+  let bnbPrice = prices.binancecoin.usd
+  // let btcPrice = prices.bitcoin.usd
+  // let adaPrice = prices.cardano.usd
+  // let dogePrice = prices.dogecoin.usd
+  // let ethPrice = prices.ethereum.usd
+  // let ltcPrice = prices.litecoin.usd
+  // let maticPrice = prices["matic-network"].usd
+  // let cakePrice = prices["pancakeswap-token"].usd
+  // let xrpPrice = prices.ripple.usd
+  // let usdtPrice = prices.tether.usd
+
   return (
     <div>
-      {/* <div>
-        {cryptoPrices.map((price) => {
-          <div>
-            <p>{price}</p>
-          </div>
-        })}
-      </div> */}
+      <div>
+        <p>{bnbPrice}</p>
+      </div>
       <h1 id='list-title'>Cryptocurrencies</h1>
       <div className='crypto-list'>
         {cryptocurrencies.map((cryptocurrency) => (
