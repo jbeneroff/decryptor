@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post.cryptocurrency = @cryptocurrency
     @cryptocurrency.posts << @post
     if @post.save
-      render json: @post, status: :created
+      render json: @post, include: %i[cryptocurrency user comments], status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      render json: @post
+      render json: @post, include: %i[cryptocurrency user comments]
     else
       render json: @post.errors, status: :unprocessable_entity
     end

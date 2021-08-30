@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import './CommentEdit.css'
+import './CommentEdit.css'
 
 export default function CommentEdit(props) {
   const [formData, setFormData] = useState({
     content: ''
   })
 
-  const { posts, comments, handleUpdateComment } = props
+  const { comments, handleUpdateComment } = props
   const { id } = useParams()
 
   useEffect(() => {
@@ -33,15 +33,15 @@ export default function CommentEdit(props) {
       e.preventDefault();
       handleUpdateComment(id, formData);
     }}>
-      <h3 id='edit-header'>Edit Your Comment</h3>
-      <div className='edit-div'>
-        <textarea id='edit-input'
+      <h3 id='edit-comment-header'>Edit Your Comment</h3>
+      <div className='edit-comment-div'>
+        <textarea id='edit-comment-input'
           type='text'
           name='content'
           value={formData.content}
           onChange={handleChange}
         />
-        <button id='submit-edit'>Submit Changes</button>
+        <button id='submit-comment-edit'>Submit Changes</button>
       </div>
     </form>
   )

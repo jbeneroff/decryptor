@@ -8,7 +8,6 @@ import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
 // import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
-import CommentCreate from '../components/CommentCreate'
 import CommentEdit from '../screens/CommentEdit'
 
 export default function MainContainer(props) {
@@ -52,7 +51,7 @@ export default function MainContainer(props) {
   const handleCreateComment = async (formData, post) => {
     const commentData = await postComment(formData, post)
     setComments((prevState) => [...prevState, commentData])
-    history.goBack()
+    history.push(`/cryptocurrencies/${commentData.post.cryptocurrency_id}`)
   }
 
 
@@ -91,7 +90,7 @@ export default function MainContainer(props) {
     <div>
       <Switch>
         <Route path='/comments/:id/edit'>
-          <CommentEdit posts={posts} handleUpdateComment={handleUpdateComment} comments={comments} />
+          <CommentEdit posts={posts} currentUser={currentUser} handleUpdateComment={handleUpdateComment} comments={comments} />
         </Route>
         {/* <Route path='/comments/new'>
           <CommentCreate posts={posts} handleCreateComment={handleCreateComment} />
@@ -106,7 +105,16 @@ export default function MainContainer(props) {
           <Posts posts={posts} />
         </Route> */}
         <Route path='/cryptocurrencies/:id'>
-          <CryptocurrencyDetail handleCreateComment={handleCreateComment} posts={posts} comments={comments} currentUser={currentUser} handleDelete={handleDelete} handleDeleteComment={handleDeleteComment} />
+          <CryptocurrencyDetail
+            // cryptocurrencies={cryptocurrencies}
+            // handleCreate={handleCreate}
+            handleCreateComment={handleCreateComment}
+            posts={posts}
+            comments={comments}
+            currentUser={currentUser}
+            handleDelete={handleDelete}
+            handleDeleteComment={handleDeleteComment}
+            cryptocurrencies={cryptocurrencies}/>
         </Route>
         <Route path='/'>
           <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />

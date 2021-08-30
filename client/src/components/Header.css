@@ -1,8 +1,10 @@
 .header {
-  background-image: linear-gradient(to right, #ebebeb , #c0cad7);
+  /* background-image: linear-gradient(to right, #ebebeb, #c0cad7); */
+  background-color: #2c9ad5;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* border-bottom: 1px solid white; */
 }
 
 #title-link {
@@ -12,32 +14,73 @@
 #title {
   margin: 0px;
   padding: 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  letter-spacing: .2rem;
-  color: #8BA1CE;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  /* color: #8ba1ce; */
+  color: white;
 }
 
-.user-nav, .non-user-nav {
+.user-nav,
+.non-user-nav {
   display: flex;
   flex-direction: column;
   padding: 22px 15px 15px 15px;
   margin-right: 2px;
-
 }
 
-#cryptos, #username, #logout, #new-post, #login, #sign-up {
+#cryptos,
+#username,
+#logout,
+#new-post,
+#login,
+#sign-up {
   margin: 6px 5px;
-  text-align: center;
+  /* text-align: center; */
   padding: 1px;
   text-decoration: none;
   font-size: 14px;
   line-height: 5px;
   /* border-radius: 4px; */
-  border:  none;
+  border: none;
   background: none;
-  color: #2C9AD5;
+  color: white;
   letter-spacing: 1px;
   text-align: right;
 }
 
+@media only screen and (max-width: 400px) {
+  .user-nav,
+  .non-user-nav {
+    padding: 22px 0px 15px 2px;
+  }
+  #title {
+    font-size: 24px;
+    padding: 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #title {
+    font-size: 40px;
+    color: #2c9ad5;
+  }
+  .user-nav,
+  .non-user-nav {
+    flex-direction: row;
+    margin: 20px 10px;
+  }
+  #cryptos,
+  #username,
+  #logout,
+  #new-post,
+  #login,
+  #sign-up {
+    font-size: 16px;
+    margin: 6px 8px;
+    color: #2c9ad5;
+  }
+  .header {
+    background-color: white;
+  }
+}

@@ -1,36 +1,49 @@
-#create-comment-header {
-  font-size: 16px;
-  margin-bottom: 5px;
-  color: #2C9AD5;
-}
-
 .create-comment-div {
   margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #create-comment-input {
-  width: 70%;
-  height: 20px;
-  padding: 4px;
-  border: #8BA1CE 1px solid;
+  width: 80%;
+  height: 18px;
+  padding: 6px;
+  border: #8ba1ce 1px solid;
   border-radius: 6px;
-  font-size: 12px;
-  font-family: 'Roboto', sans-serif;
-  float: left;
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
 }
 
 #create-comment-input::placeholder {
-  color:#8BA1CE;
+  color: #8ba1ce;
 }
 
 #post-comment-button {
-  margin: 5px 5px 1px 1px;
   font-size: 10px;
-  background-color: #8BA1CE;
-  border: #8BA1CE 1px solid;
-  padding: 6px 8px;
-  border-radius: 10px;
+  background-color: #8ba1ce;
+  border: #8ba1ce 1px solid;
+  padding: 6px;
+  border-radius: 6px;
   width: 20%;
   color: white;
-  float: right;
+}
+
+@media only screen and (max-width: 400px) {
+  #post-comment-button {
+    font-size: 7px;
+    padding: 1px;
+  }
+  #create-comment-input {
+    height: 10px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #create-comment-input {
+    font-size: 14px;
+  }
+  #post-comment-button {
+    font-size: 14px;
+  }
 }

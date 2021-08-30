@@ -1,5 +1,7 @@
 # DeCryptor
 
+[DeCryptor Website](https://decryptor.netlify.app/)
+
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
@@ -116,19 +118,19 @@ src
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Project Proposal and Approval          |    H     |      3hrs      |     3hrs      |    3hrs    |
 | Back End Database          |    H     |      1hrs      |     1hrs      |     1hrs    |
-| Back End Models         |    H     |      1hrs      |     1hrs      |         |
-| Back End Controllers          |    H     |      3hrs      |     1hrs     |         |
-| Back End Routes         |    H     |      1hrs      |    1hrs     |         |
+| Back End Models         |    H     |      1hrs      |     1hrs      |     1hrs    |
+| Back End Controllers          |    H     |      3hrs      |     2hrs     |     2hrs    |
+| Back End Routes         |    H     |      1hrs      |    1hrs     |    1hrs     |
 | Back End Authentication/Authorization         |    H     |      1hrs      |     1hrs     |   1hrs    |
-| Front End Components          |    H     |      3hrs      |      1hrs     |         |
-| Front End Screens          |    H     |      3hrs      |     1hrs      |         |
-| Front End Services        |    H     |      3hrs      |     1hrs     |        |
-| Front End Containers          |    H     |      3hrs      |     1hrs      |         |
+| Front End Components          |    H     |      3hrs      |      2hrs     |         |
+| Front End Screens          |    H     |      3hrs      |     3hrs      |         |
+| Front End Services        |    H     |      3hrs      |     1hrs     |    1hrs    |
+| Front End Containers          |    H     |      3hrs      |     2hrs      |     2hrs    |
 | Front End Authentication/Authorization         |    H     |      1hrs      |     1hrs      |    1hrs    |
 | CSS styling         |    H     |      6hrs      |     4hrs    |         |
-| Media Queries        |    H     |      2hrs      |         |         |
+| Media Queries        |    H     |      2hrs      |     1hrs    |         |
 | Debugging        |    H     |      6hrs      |    4hrs     |         |
-| PMVP- Comments        |    M     |      3hrs      |         |         |
+| PMVP- Comments        |    M     |      3hrs      |    2hrs     |     2hrs    |
 | PMVP- Price Data        |    M     |      3hrs      |         |         |
 | PMVP- User Profile        |    L     |      3hrs      |         |         |
 | PMVP- New Posts to Top        |    L     |      2hrs      |         |         |
