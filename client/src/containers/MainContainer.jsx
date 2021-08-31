@@ -33,12 +33,14 @@ export default function MainContainer(props) {
       return { ...currency, price: priceList[currency.api_id]?.usd, change: priceList[currency.api_id]?.usd_24h_change}
     }
     ))
+    // eslint-disable-next-line
   }, [cryptocurrencies])
 
   useEffect(() => {
     if (cryptocurrencies.length) {
       fetchPrices()
     }
+    // eslint-disable-next-line
   }, [cryptocurrencies.length])
 
   useEffect(() => {
@@ -118,8 +120,6 @@ export default function MainContainer(props) {
         </Route>
         <Route path='/cryptocurrencies/:id'>
           <CryptocurrencyDetail
-            // cryptocurrencies={cryptocurrencies}
-            // handleCreate={handleCreate}
             handleCreateComment={handleCreateComment}
             posts={posts}
             comments={comments}
