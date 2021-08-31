@@ -54,6 +54,12 @@
   color: #2c9ad5;
 }
 
+#create-error {
+  font-size: 14px;
+  color: white;
+  margin: 1px;
+}
+
 @media only screen and (min-width: 768px) {
   #create-input {
     width: 60%;
@@ -73,5 +79,9 @@
   }
   #create-input {
     width: 50%;
+  }
+  #create-error {
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
