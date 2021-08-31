@@ -4,7 +4,7 @@ import './Footer.css'
 export default function Footer() {
   return (
     <div className='footer'>
-      <p id='footer-text'>© Jared Beneroff 2021</p>
+      <a id='footer-text' href='https://github.com/jbeneroff' >© Jared Beneroff 2021</a>
     </div>
   )
 }
