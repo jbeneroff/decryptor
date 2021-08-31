@@ -22,7 +22,7 @@ export const verifyUser = async () => {
     return resp.data
   }
   return null
-};
+}
 
 export const removeToken = () => {
   api.defaults.headers.common.authorization = null

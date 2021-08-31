@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { getAllCryptocurrencies } from '../services/cryptocurrencies'
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts'
 import { getAllComments, postComment, putComment, deleteComment } from '../services/comments'
+import { getAllPrices } from '../services/prices'
 import Cryptocurrencies from '../screens/Cryptocurrencies'
 import CryptocurrencyDetail from '../screens/CryptocurrencyDetail'
-// import Posts from '../screens/Posts'
+import Posts from '../screens/Posts'
 import PostCreate from '../screens/PostCreate'
 import PostEdit from '../screens/PostEdit'
 import CommentEdit from '../screens/CommentEdit'
@@ -25,6 +26,22 @@ export default function MainContainer(props) {
     }
     fetchCryptocurrencies()
   }, [])
+
+  const fetchPrices = useCallback( async () => {
+    const priceList = await getAllPrices()
+    setCryptocurrencies(prevState => prevState.map((currency) => {
+      return { ...currency, price: priceList[currency.api_id]?.usd, change: priceList[currency.api_id]?.usd_24h_change}
+    }
+    ))
+    // eslint-disable-next-line
+  }, [cryptocurrencies])
+
+  useEffect(() => {
+    if (cryptocurrencies.length) {
+      fetchPrices()
+    }
+    // eslint-disable-next-line
+  }, [cryptocurrencies.length])
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -92,32 +109,27 @@ export default function MainContainer(props) {
         <Route path='/comments/:id/edit'>
           <CommentEdit posts={posts} currentUser={currentUser} handleUpdateComment={handleUpdateComment} comments={comments} />
         </Route>
-        {/* <Route path='/comments/new'>
-          <CommentCreate posts={posts} handleCreateComment={handleCreateComment} />
-        </Route> */}
         <Route path='/posts/:id/edit'>
           <PostEdit posts={posts} handleUpdate={handleUpdate} cryptocurrencies={cryptocurrencies} />
         </Route>
         <Route path='/posts/new'>
           <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate} />
         </Route>
-        {/* <Route path='/posts'>
-          <Posts posts={posts} />
-        </Route> */}
+        <Route path='/posts'>
+          <Posts posts={posts} comments={comments} handleDelete={handleDelete} currentUser={currentUser}/>
+        </Route>
         <Route path='/cryptocurrencies/:id'>
           <CryptocurrencyDetail
-            // cryptocurrencies={cryptocurrencies}
-            // handleCreate={handleCreate}
             handleCreateComment={handleCreateComment}
             posts={posts}
             comments={comments}
             currentUser={currentUser}
             handleDelete={handleDelete}
             handleDeleteComment={handleDeleteComment}
-            cryptocurrencies={cryptocurrencies}/>
+            cryptocurrencies={cryptocurrencies} />
         </Route>
         <Route path='/'>
-          <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} s />
+          <Cryptocurrencies cryptocurrencies={cryptocurrencies} currentUser={currentUser} />
         </Route>
       </Switch>
     </div>

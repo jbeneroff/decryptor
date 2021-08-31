@@ -5,7 +5,7 @@ class CryptocurrenciesController < ApplicationController
   def index
     @cryptocurrencies = Cryptocurrency.all
 
-    render json: @cryptocurrencies
+    render json: @cryptocurrencies, include: :posts
   end
 
   # GET /cryptocurrencies/1
@@ -23,20 +23,6 @@ class CryptocurrenciesController < ApplicationController
       render json: @cryptocurrency.errors, status: :unprocessable_entity
     end
   end
-
-  # PATCH/PUT /cryptocurrencies/1
-  # def update
-  #   if @cryptocurrency.update(cryptocurrency_params)
-  #     render json: @cryptocurrency
-  #   else
-  #     render json: @cryptocurrency.errors, status: :unprocessable_entity
-  #   end
-  # end
-
-  # DELETE /cryptocurrencies/1
-  # def destroy
-  #   @cryptocurrency.destroy
-  # end
 
   private
 

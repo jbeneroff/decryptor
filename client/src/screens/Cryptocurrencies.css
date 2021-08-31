@@ -16,11 +16,15 @@
 
 .crypto-card {
   padding: 15px;
-  /* background-color: #9fd8f1; */
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.crypto-card:hover {
+  transform: scale(1.1);
 }
 
 .crypto-link {
@@ -29,16 +33,32 @@
 
 .crypto-name {
   margin: 10px;
-  /* color: white; */
   color: #2c9ad5;
   font-size: 20px;
 }
 
 .crypto-symbol {
   margin: 10px;
-  /* color: white; */
   color: #9fd8f1;
   font-size: 18px;
+}
+
+.crypto-price {
+  margin: 10px;
+  color: black;
+  font-size: 18px;
+}
+
+.crypto-change-green {
+  margin: 5px;
+  color: rgb(0, 169, 0);
+  font-size: 16px;
+}
+
+.crypto-change-red {
+  margin: 5px;
+  color: red;
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 1440px) {

@@ -4,6 +4,7 @@ import './PostCreate.css'
 export default function PostCreate(props) {
 
   const [selectedCryptocurrency, setSelectedCryptocurrency] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const { cryptocurrencies } = props
 
   const [formData, setFormData] = useState({
@@ -39,8 +40,12 @@ export default function PostCreate(props) {
           ))}
         </select>
       </form>
+      <p id='create-error'>{errorMessage}</p>
       <form id='input-form' onSubmit={(e) => {
         e.preventDefault()
+        if (!selectedCryptocurrency) {
+          setErrorMessage('Please Select a Cryptocurrency')
+        }
         handleCreate(formData, selectedCryptocurrency)
       }}>
         <div className='create-div'>

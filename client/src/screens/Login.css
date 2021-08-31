@@ -41,12 +41,30 @@
   border-radius: 10px;
   width: 30%;
   color: white;
+  transition: all 0.2s;
+}
+
+#signin-button:hover,
+#signup-button:hover {
+  background-color: white;
+  color: #8ba1ce;
 }
 
 #no-account-header {
   margin: 5px;
   color: #2c9ad5;
   font-weight: 500;
+}
+
+#login-error {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 400px) {
+  #signin-button,
+  #signup-button {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 768px) {

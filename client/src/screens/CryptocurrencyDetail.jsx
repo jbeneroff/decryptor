@@ -1,24 +1,26 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import CommentCreate from '../components/CommentCreate'
-import PostCreate from './PostCreate'
-import { getOneCryptocurrency } from '../services/cryptocurrencies'
+import Loader from '../components/Loader'
 import './CryptocurrencyDetail.css'
 
 export default function CryptocurrencyDetail(props) {
 
   const [cryptocurrency, setCryptocurrency] = useState(null)
+  const [isDescriptionShow, setIsDescriptionShow] = useState(false)
   const [isCommentsShow, setIsCommentsShow] = useState(false)
   const { id } = useParams()
-  const { cryptocurrencies, handleCreate, posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
+  const { cryptocurrencies, posts, handleDelete, currentUser, comments, handleCreateComment, handleDeleteComment } = props
 
   useEffect(() => {
     const fetchCryptocurrency = async () => {
-      const cryptocurrencyData = await getOneCryptocurrency(id)
+      const cryptocurrencyData = cryptocurrencies.find(currency => currency.id === Number(id))
       setCryptocurrency(cryptocurrencyData)
     }
-    fetchCryptocurrency()
-  }, [id])
+    if (cryptocurrencies.length) {
+      fetchCryptocurrency()
+    }
+  }, [id, cryptocurrencies])
 
   const showComments = (post) => {
     if (isCommentsShow === post.id) {
@@ -28,10 +30,21 @@ export default function CryptocurrencyDetail(props) {
     }
   }
 
+  const showDescription = (cryptocurrency) => {
+    if (isDescriptionShow === cryptocurrency.id) {
+      setIsDescriptionShow(false)
+    } else {
+      setIsDescriptionShow(cryptocurrency.id)
+    }
+  }
+
+  if (posts.length === 0) {
+    return <Loader />
+  }
 
   return (
     <div className ='page'>
-      {/* <div className='crypto-list-dp'>
+      <div className='crypto-list-dp'>
         {cryptocurrencies.map((cryptocurrency) => (
           <div className='crypto-card-dp' key={cryptocurrency.id}>
             <Link className='crypto-link-dp' to={`/cryptocurrencies/${cryptocurrency.id}`}>
@@ -39,19 +52,23 @@ export default function CryptocurrencyDetail(props) {
             </Link>
           </div>
         ))}
-      </div> */}
+      </div>
+      <hr />
     <div>
       <div className='detail-div'>
         <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
-        <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
-        <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>
+          <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
+          <p id='crypto-detail-price' >${cryptocurrency?.price}</p>
+          <p className={`${(cryptocurrency?.change > 0) ? "crypto-detail-change-green" : "crypto-detail-change-red"}`}>{Number.parseFloat(cryptocurrency?.change).toFixed(2)}%</p>
+        <button id='show-description' onClick={() => showDescription(cryptocurrency)}>What is {cryptocurrency?.name}?</button>
+        {isDescriptionShow === cryptocurrency?.id &&
+          <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>}
       </div>
       {currentUser && (
         <div>
           <Link to='/posts/new'>
             <button id='create-button'>+</button>
           </Link>
-          {/* <PostCreate cryptocurrencies={cryptocurrencies} handleCreate={handleCreate}/> */}
         </div>
       )}
       <div>
@@ -71,7 +88,8 @@ export default function CryptocurrencyDetail(props) {
                   </div>
                 )}
                 <button id='show-button' onClick={() => showComments(post)}>Comments</button>
-                {isCommentsShow === post.id && <div>
+                {isCommentsShow === post.id && 
+                <div>
                   {comments.map((comment, key) => {
                     if (comment?.post_id === post?.id) {
                       return (
@@ -88,6 +106,8 @@ export default function CryptocurrencyDetail(props) {
                           )}
                         </div>
                       )
+                    } else {
+                      return false
                     }
                   })}
                   {currentUser && (
@@ -98,6 +118,8 @@ export default function CryptocurrencyDetail(props) {
                 </div>}
               </div>
             )
+          } else {
+            return false
           }
         })}
       </div>

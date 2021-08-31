@@ -46,6 +46,18 @@
   border-radius: 10px;
   width: 20%;
   color: white;
+  transition: all 0.2s;
+}
+
+#post-button:hover {
+  background-color: white;
+  color: #2c9ad5;
+}
+
+#create-error {
+  font-size: 14px;
+  color: white;
+  margin: 1px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -67,5 +79,9 @@
   }
   #create-input {
     width: 50%;
+  }
+  #create-error {
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
