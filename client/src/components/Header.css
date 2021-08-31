@@ -37,8 +37,7 @@
   margin-right: 2px;
 }
 
-.nav-item,
-#username {
+.nav-item {
   margin: 0px 5px;
   padding: 4px;
   text-decoration: none;
@@ -94,8 +93,7 @@
     flex-direction: row;
     margin: 20px 10px;
   }
-  .nav-item,
-  #username {
+  .nav-item {
     font-size: 16px;
     margin: 6px 8px;
     color: #2c9ad5;
