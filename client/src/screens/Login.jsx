@@ -7,6 +7,7 @@ export default function Login(props) {
     username: '',
     password: '',
   })
+  const [message, setMessage] = useState('')
 
   const { handleLogin } = props
 
@@ -22,8 +23,9 @@ export default function Login(props) {
     <div className='signin-form'>
       <form
         onSubmit={(e) => {
-          e.preventDefault()
+          e.preventDefault() 
           handleLogin(formData)
+          setMessage('Invalid Credentials')
         }}
       >
         <h3 id='signin-header'>Sign In</h3>
@@ -44,7 +46,7 @@ export default function Login(props) {
           onChange={handleChange}
           placeholder='Password'
         />
-        <br />
+        <p id='login-error' >{message}</p>
         <button id='signin-button'>Sign In</button>
         <br />
         <h5 id='no-account-header'>Don't have an account?</h5>

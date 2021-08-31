@@ -56,6 +56,14 @@
   color: #2c9ad5;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 400px) {
+  #login-button,
+  #register-button {
+    font-size: 12px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .signup-form {
     margin: 80px 200px 80px 200px;
