@@ -16,7 +16,6 @@
 
 .crypto-card {
   padding: 15px;
-  /* background-color: #9fd8f1; */
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
@@ -46,8 +45,20 @@
 
 .crypto-price {
   margin: 10px;
-  color: #8ba1ce;
+  color: black;
   font-size: 18px;
+}
+
+.crypto-change-green {
+  margin: 5px;
+  color: green;
+  font-size: 16px;
+}
+
+.crypto-change-red {
+  margin: 5px;
+  color: red;
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 1440px) {

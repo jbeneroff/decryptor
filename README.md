@@ -123,15 +123,15 @@ src
 | Front End Services                     |    H     |      3hrs      |     1hrs      |    1hrs     |
 | Front End Containers                   |    H     |      3hrs      |     2hrs      |    2hrs     |
 | Front End Authentication/Authorization |    H     |      1hrs      |     1hrs      |    1hrs     |
-| CSS styling                            |    H     |      6hrs      |     8hrs      |             |
+| CSS styling                            |    H     |      6hrs      |     8hrs      |    8hrs     |
 | Media Queries                          |    H     |      2hrs      |     2hrs      |    2hrs     |
-| Debugging                              |    H     |      6hrs      |     6hrs      |             |
+| Debugging                              |    H     |      6hrs      |     6hrs      |    6hrs     |
 | PMVP- Comments                         |    M     |      3hrs      |     2hrs      |    2hrs     |
 | PMVP- Price Data                       |    M     |      3hrs      |     2hrs      |    2hrs     |
 | PMVP- User Profile                     |    L     |      3hrs      |     1hrs      |    1hrs     |
 | PMVP- New Posts to Top                 |    L     |      2hrs      |     1hrs      |    1hrs     |
-| PMVP- Upvoting Posts                   |    L     |      3hrs      |     0hrs      |             |
-| TOTAL                                  |          |     51hrs      |               |             |
+| PMVP- Upvoting Posts                   |    L     |      3hrs      |     0hrs      |    0hrs     |
+| TOTAL                                  |          |     51hrs      |     41hrs     |    41hrs    |
 
 <br>
 
@@ -157,4 +157,61 @@ src
 
 ## Code Showcase
 
+3rd Party API for Cryptocurrency Price Data
+Backend
+
+```
+class PricesController < ApplicationController
+  require 'rest-client'
+
+  def get_prices
+    url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Cbinancecoin%2Ctether%2Cdogecoin%2Cripple%2Clitecoin%2Cmatic-network%2Cpancakeswap-token&vs_currencies=usd&include_24hr_change=true'
+    response = RestClient.get(url)
+    render json: response
+  end
+end
+```
+
+Frontend
+
+```
+export const getAllPrices = async () => {
+  const resp = await api.get('/prices')
+  return resp.data
+}
+```
+
+```
+const fetchPrices = useCallback( async () => {
+    const priceList = await getAllPrices()
+    setCryptocurrencies(prevState => prevState.map((currency) => {
+      return { ...currency, price: priceList[currency.api_id]?.usd, change: priceList[currency.api_id]?.usd_24h_change}
+    }
+    ))
+  }, [cryptocurrencies])
+```
+
 ## Code Issues & Resolutions
+
+Show Comments Button
+
+```
+const showComments = (post) => {
+    if (isCommentsShow === post.id) {
+      setIsCommentsShow(false)
+    } else {
+      setIsCommentsShow(post.id)
+    }
+  }
+```
+
+```
+{isCommentsShow === post.id &&
+                <div>
+                  {comments.map((comment, key) => {
+                    if (comment?.post_id === post?.id) {
+                      return (
+                        <div className='comment-div' key={comment.id}>
+                          <p id='commenter'>{comment?.user?.username}</p>
+                          <p id='comment-content'>{comment?.content}</p>
+```

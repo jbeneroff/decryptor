@@ -24,20 +24,6 @@ class CryptocurrenciesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cryptocurrencies/1
-  # def update
-  #   if @cryptocurrency.update(cryptocurrency_params)
-  #     render json: @cryptocurrency
-  #   else
-  #     render json: @cryptocurrency.errors, status: :unprocessable_entity
-  #   end
-  # end
-
-  # DELETE /cryptocurrencies/1
-  # def destroy
-  #   @cryptocurrency.destroy
-  # end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
