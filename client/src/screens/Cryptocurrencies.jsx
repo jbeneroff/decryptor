@@ -19,6 +19,7 @@ export default function Cryptocurrencies(props) {
               <p className='crypto-name'>{cryptocurrency.name}</p>
               <p className='crypto-symbol'>{cryptocurrency.symbol}</p>
               <p className='crypto-price'>${cryptocurrency.price}</p>
+              <p className={`${(cryptocurrency.change > 0) ? "crypto-change-green" : "crypto-change-red"}`}>{Number.parseFloat(cryptocurrency.change).toFixed(2)}%</p>
             </Link>
           </div>
         ))}

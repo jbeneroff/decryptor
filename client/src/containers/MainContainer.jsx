@@ -27,13 +27,12 @@ export default function MainContainer(props) {
     fetchCryptocurrencies()
   }, [])
 
-  
   const fetchPrices = useCallback( async () => {
     const priceList = await getAllPrices()
     setCryptocurrencies(prevState => prevState.map((currency) => {
-      return {...currency, price: priceList[currency.api_id]?.usd}
+      return { ...currency, price: priceList[currency.api_id]?.usd, change: priceList[currency.api_id]?.usd_24h_change}
     }
-    )) 
+    ))
   }, [cryptocurrencies])
 
   useEffect(() => {
