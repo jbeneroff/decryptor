@@ -243,6 +243,9 @@
   }
   hr {
     width: 95%;
+    border-color: white;
+    background-color: white;
+    color: white;
   }
   .post-div {
     margin: 20px 200px 20px 200px;
