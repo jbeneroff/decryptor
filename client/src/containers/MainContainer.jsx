@@ -84,7 +84,6 @@ export default function MainContainer(props) {
 
   const handleUpdateComment = async (id, formData) => {
     const commentData = await putComment(id, formData)
-    console.log(commentData)
     setComments((prevState) =>
       prevState.map((comment) => {
         return comment.id === Number(id) ? commentData : comment
