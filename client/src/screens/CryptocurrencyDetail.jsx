@@ -59,6 +59,7 @@ export default function CryptocurrencyDetail(props) {
         <h1 id='crypto-detail-name'>{cryptocurrency?.name}</h1>
           <h2 id='crypto-detail-symbol'>{cryptocurrency?.symbol}</h2>
           <p id='crypto-detail-price' >${cryptocurrency?.price}</p>
+          <p className={`${(cryptocurrency?.change > 0) ? "crypto-detail-change-green" : "crypto-detail-change-red"}`}>{Number.parseFloat(cryptocurrency?.change).toFixed(2)}%</p>
         <button id='show-description' onClick={() => showDescription(cryptocurrency)}>What is {cryptocurrency?.name}?</button>
         {isDescriptionShow === cryptocurrency?.id &&
           <h3 id='crypto-detail-description'>{cryptocurrency?.description}</h3>}

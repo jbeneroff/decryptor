@@ -46,7 +46,7 @@ puts "#{User.count} users created"
   api_id: 'dogecoin'
 )
 @xrp = Cryptocurrency.create!(
-  name: 'XRP',
+  name: 'Ripple',
   symbol: 'XRP',
   description: 'XRP is the currency that runs on a digital payment platform called RippleNet, which is on top of a distributed ledger database called XRP Ledger. While RippleNet is run by a company called Ripple, the XRP Ledger is open-source and is not based on blockchain, but rather the previously mentioned distributed ledger database. The RippleNet payment platform is a real-time gross settlement (RTGS) system that aims to enable instant monetary transactions globally. While XRP is the cryptocurrency native to the XRP Ledger, you can actually use any currency to transact on the platform.',
   api_id: 'ripple'

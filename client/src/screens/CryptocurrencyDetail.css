@@ -15,9 +15,21 @@
 }
 
 #crypto-detail-price {
-  margin: 10px;
+  margin: 10px 10px 5px 10px;
   font-size: 20px;
   color: black;
+}
+
+.crypto-detail-change-green {
+  margin: 0px 0px 5px 0px;
+  color: green;
+  font-size: 18px;
+}
+
+.crypto-detail-change-red {
+  margin: 0px 0px 5px 0px;
+  color: red;
+  font-size: 18px;
 }
 
 #show-description {
